@@ -15,7 +15,6 @@ changing the compiler in the project settings.
 - `main.tex`: complete thesis source and the Overleaf main document.
 - `figures/`: vector PDF graphs regenerated from the current R outputs, plus the
   University of Amsterdam logo used on the title page.
-- `source/Toprak Thesis v9.docx`: unchanged Word source retained for comparison.
 - `latexmkrc`: reproducible XeLaTeX build configuration.
 
 Tables are native LaTeX `booktabs`/`longtable` tables rather than screenshots or

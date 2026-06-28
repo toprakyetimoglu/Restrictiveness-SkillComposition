@@ -19,7 +19,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{longtable,booktabs,array,tabularx}
+\usepackage{longtable,booktabs,array,tabularx,makecell}
 \usepackage{calc}
 \usepackage{ragged2e}
 \usepackage{caption}
@@ -71,6 +71,11 @@
 \newcounter{none}
 \newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\Centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\Centering\arraybackslash}X}
+\newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
+\newcommand{\NA}{\multicolumn{1}{c}{--}}
+\newcommand{\yes}{\multicolumn{1}{c}{Yes}}
+\newcommand{\no}{\multicolumn{1}{c}{No}}
 \AtBeginEnvironment{longtable}{%
   \footnotesize
   \setlength{\tabcolsep}{3.6pt}%
@@ -812,26 +817,16 @@ denominator of HSRate.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2794}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1076}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1613}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1613}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1288}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1615}}@{}}
+  L{(\linewidth - 10\tabcolsep) * \real{0.2794}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1076}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1613}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1613}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1288}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1615}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Policy definition}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Events}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Work-visa events}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Less restrictive}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{No change}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{More restrictive}
-\end{minipage} \\
+\textbf{Policy definition} & \textbf{Events} & \makecell{\textbf{Work-visa}\\\textbf{events}} &
+\makecell{\textbf{Less}\\\textbf{restrictive}} & \makecell{\textbf{No}\\\textbf{change}} &
+\makecell{\textbf{More}\\\textbf{restrictive}} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -856,18 +851,13 @@ the preferred all-migrant-worker-only definition.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.5778}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2194}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2029}}@{}}
+  L{(\linewidth - 4\tabcolsep) * \real{0.5778}}
+  C{(\linewidth - 4\tabcolsep) * \real{0.2194}}
+  C{(\linewidth - 4\tabcolsep) * \real{0.2029}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Policy tool (Legal entry and stay)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Legacy combined: all-migrant-worker + skilled/high-skilled
-(n=524)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Preferred all-migrant-worker only (n=257)}
-\end{minipage} \\
+\textbf{Policy tool (Legal entry and stay)} &
+\textbf{Legacy combined:} all-migrant-worker + skilled/high-skilled (n=524) &
+\textbf{Preferred:} all-migrant-worker only (n=257) \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -911,20 +901,15 @@ that do not directly govern employer-permit admission.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2965}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1218}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1244}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4573}}@{}}
+  L{(\linewidth - 6\tabcolsep) * \real{0.2965}}
+  C{(\linewidth - 6\tabcolsep) * \real{0.1218}}
+  C{(\linewidth - 6\tabcolsep) * \real{0.1244}}
+  L{(\linewidth - 6\tabcolsep) * \real{0.4573}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Policy tool in preferred all-migrant-worker measure}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{All events}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{More restrictive events}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Role in the measure}
-\end{minipage} \\
+\textbf{Policy tool in preferred all-migrant-worker measure} &
+\textbf{All events} &
+\textbf{More restrictive events} &
+\textbf{Role in the measure} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1085,26 +1070,14 @@ repeated here.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2208}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1483}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1569}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1585}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1584}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1570}}@{}}
+  L{(\linewidth - 10\tabcolsep) * \real{0.2208}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1483}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1569}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1585}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1584}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1570}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Variable}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Mean}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{SD}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Min}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Max}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{N}
-\end{minipage} \\
+\textbf{Variable} & \textbf{Mean} & \textbf{SD} & \textbf{Min} & \textbf{Max} & \textbf{N} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1127,26 +1100,14 @@ Lagged destination real GDP growth & 1.682 & 3.673 & -16.000 & 24.600 &
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2123}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1569}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1569}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1585}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1584}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1570}}@{}}
+  L{(\linewidth - 10\tabcolsep) * \real{0.2123}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1569}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1569}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1585}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1584}}
+  C{(\linewidth - 10\tabcolsep) * \real{0.1570}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Variable}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Mean}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{SD}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Min}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Max}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{N}
-\end{minipage} \\
+\textbf{Variable} & \textbf{Mean} & \textbf{SD} & \textbf{Min} & \textbf{Max} & \textbf{N} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1518,62 +1479,43 @@ skill-target controls; the preferred test is the bilateral specification
 in Section 7.2.
 
 \Needspace{7\baselineskip}\captionof{table}[Aggregate country-year regression results]{Aggregate country-year regression results. Outcome: high-skilled share, except M4 (log high-skilled permit count).}\label{tab:aggregate-results}
-\TableNote{Significance markers in this and following result tables: *** $p<0.01$, ** $p<0.05$, * $p<0.10$, n.s. $p\geq0.10$.}
+\TableNote{Significance markers in this and following result tables: *** $p<0.01$, ** $p<0.05$, * $p<0.10$.}
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2121}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1673}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2123}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1003}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1008}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0726}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0724}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0561}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Model}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Outcome}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Regressor}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\beta\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{SE}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{p (sig.)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{N}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{G}
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-M0 country and year FE only & High-skilled share & Lagged
-all-migrant-worker cumulative net policy-change score & -0.000347 &
-0.001958 & 0.861 n.s. & 370 & 31 \\
-M1 plus skill-target policy controls & High-skilled share & Lagged
-all-migrant-worker cumulative net policy-change score & -0.000995 &
-0.002131 & 0.644 n.s. & 370 & 31 \\
-M2 plus lagged permit scale & High-skilled share & Lagged
-all-migrant-worker cumulative net policy-change score & 0.000432 &
-0.001897 & 0.821 n.s. & 340 & 31 \\
-M3 full aggregate controls & High-skilled share & Lagged
-all-migrant-worker cumulative net policy-change score & 0.001180 &
-0.001843 & 0.527 n.s. & 308 & 30 \\
-M4 level outcome & log(1 + HSNumber) & Lagged all-migrant-worker
-cumulative net policy-change score & 0.021726 & 0.020393 & 0.296 n.s. &
-308 & 30 \\
-Annual-flow alternative & High-skilled share & Lagged all-migrant-worker
-annual policy-flow score & 0.001339 & 0.002060 & 0.521 n.s. & 308 &
-30 \\
-\end{longtable}
-}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.00}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X*{6}{Y}@{}}
+\toprule
+ & \textbf{M0} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \makecell{\textbf{Annual}\\\textbf{flow}} \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Policy coefficient}} \\
+Lagged all-migrant-worker policy score
+  & -0.000347 & -0.000995 & 0.000432 & 0.001180 & 0.021726 & 0.001339 \\
+\textit{Cluster-robust SE}
+  & (0.001958) & (0.002131) & (0.001897) & (0.001843) & (0.020393) & (0.002060) \\
+Exact p-value
+  & 0.861 & 0.644 & 0.821 & 0.527 & 0.296 & 0.521 \\
+\addlinespace[1pt]
+\multicolumn{7}{@{}l}{\textit{Specification}} \\
+Outcome
+  & HS share & HS share & HS share & HS share & \makecell{Log HS\\count} & HS share \\
+Skill-target policy controls
+  & \no & \yes & \yes & \yes & \yes & \yes \\
+Lagged permit scale
+  & \no & \no & \yes & \yes & \yes & \yes \\
+Destination macro controls
+  & \no & \no & \no & \yes & \yes & \yes \\
+\midrule
+Observations
+  & 370 & 370 & 340 & 308 & 308 & 308 \\
+Destination clusters
+  & 31 & 31 & 31 & 30 & 30 & 30 \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
-\TableNote{M0 and M1 include 2008--2020 because they do not require
+\TableNote{All models include destination and year fixed effects. M0 and M1 include 2008--2020 because they do not require
 lagged permit scale. M2-M4 begin in 2009 because the 2008 outcome has no
 2007 permit value from which to construct that control; missing
 unemployment further reduces the full-control sample. The progressive
@@ -1612,74 +1554,59 @@ cells.
 
 \Needspace{7\baselineskip}\captionof{table}{Preferred bilateral specification and comparison models.}\label{tab:bilateral-results}
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1789}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2393}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1791}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0982}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0978}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0702}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0820}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0544}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Specification / coefficient}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Policy definition}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Regressor}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\beta\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{SE}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{p (sig.)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{N}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{G}
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Bilateral & All-migrant-worker score; high- and low-skill policy scores
-held constant & Lagged cumulative all-migrant-worker policy score &
-0.003278 & 0.001094 & 0.006 *** & 6,301 & 30 \\
-High-skill policy control in preferred specification &
-High-skill-targeted policy score (control) & Lagged cumulative
-high-skill-targeted policy score & 0.001900 & 0.002246 & 0.404 n.s. &
-6,301 & 30 \\
-Low-skill policy control in preferred specification & Low-skill-targeted
-policy score (control) & Lagged cumulative low-skill-targeted policy
-score & -0.000652 & 0.002674 & 0.809 n.s. & 6,301 & 30 \\
-Unweighted bilateral comparison & All-migrant-worker score; high- and
-low-skill policy scores held constant & Lagged cumulative
-all-migrant-worker policy score & 0.002979 & 0.001314 & 0.031 ** & 6,301
-& 30 \\
-Weighted bilateral with corridor FE & All-migrant-worker score; high-
-and low-skill policy scores held constant & Lagged cumulative
-all-migrant-worker policy score & 0.002991 & 0.001002 & 0.006 *** &
-6,301 & 30 \\
-Bilateral annual policy-flow & All-migrant-worker annual policy flow;
-high- and low-skill annual flows held constant & Lagged annual
-all-migrant-worker policy-flow score & 0.000533 & 0.001500 & 0.725 n.s.
-& 6,301 & 30 \\
-\end{longtable}
-}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3.4pt}
+\renewcommand{\arraystretch}{1.00}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X*{4}{Y}@{}}
+\toprule
+ & \makecell{\textbf{Preferred}\\\textbf{weighted}} &
+   \makecell{\textbf{Unweighted}\\\textbf{comparison}} &
+   \makecell{\textbf{Weighted}\\\textbf{corridor FE}} &
+   \makecell{\textbf{Annual}\\\textbf{policy flow}} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Coefficients}} \\
+Lagged cumulative all-migrant-worker score
+  & 0.003278*** & 0.002979** & 0.002991*** & \NA \\
+\textit{Cluster-robust SE}
+  & (0.001094) & (0.001314) & (0.001002) & \NA \\
+Exact p-value
+  & 0.006 & 0.031 & 0.006 & \NA \\
+Lagged annual all-migrant-worker policy flow
+  & \NA & \NA & \NA & 0.000533 \\
+\textit{Cluster-robust SE}
+  & \NA & \NA & \NA & (0.001500) \\
+Exact p-value
+  & \NA & \NA & \NA & 0.725 \\
+\addlinespace[1pt]
+\multicolumn{5}{@{}l}{\textit{Specification}} \\
+Skill-target policy paths
+  & Cumulative & Cumulative & Cumulative & Annual \\
+Permit-denominator weights
+  & \yes & \no & \yes & \no \\
+Destination fixed effects
+  & \yes & \yes & \no & \yes \\
+Origin-destination corridor fixed effects
+  & \no & \no & \yes & \no \\
+\midrule
+Observations
+  & 6,301 & 6,301 & 6,301 & 6,301 \\
+Destination clusters
+  & 30 & 30 & 30 & 30 \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \TableNote{Outcome: bilateral high-skilled share of
 employment-related permits. All models include origin-year fixed
 effects, lagged bilateral permit scale, lagged destination unemployment,
-and lagged destination GDP growth; standard errors cluster by
-destination. The first three rows are coefficients from the same
-preferred weighted bilateral regression and use destination fixed
-effects and employment-permit-denominator weights. The unweighted
-bilateral comparison and bilateral annual policy-flow rows use
-destination fixed effects without weights. The weighted bilateral with
-corridor FE row uses origin-destination corridor fixed effects and the
-employment-permit-denominator weights.}
+lagged destination GDP growth, and the corresponding high- and low-skill
+policy paths; standard errors cluster by destination. The preferred,
+unweighted, and annual-flow models use destination fixed effects, while
+the corridor model replaces them with origin-destination fixed effects.
+The preferred and corridor models use employment-permit-denominator
+weights. The preferred model's high- and low-skill policy-control
+coefficients are reported in Appendix Table A.2.}
 
 The improved preferred weighted coefficient is \(\beta =\) 0.003278 with
 cluster-robust SE = 0.001094 (t = 3.00, p = 0.006, N = 6,301
@@ -1804,82 +1731,41 @@ checks and placebo diagnostics are weaker.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1497}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3686}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0766}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2719}}@{}}
+  L{(\linewidth - 8\tabcolsep) * \real{0.20}}
+  L{(\linewidth - 8\tabcolsep) * \real{0.39}}
+  C{(\linewidth - 8\tabcolsep) * \real{0.13}}
+  C{(\linewidth - 8\tabcolsep) * \real{0.09}}
+  L{(\linewidth - 8\tabcolsep) * \real{0.19}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Design / check}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{What this changes}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\beta\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{p (sig.)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Interpretation}
-\end{minipage} \\
+\textbf{Design / check} & \textbf{Change relative to the reference model} &
+\(\boldsymbol{\beta}\) & \textbf{p} & \textbf{Inference} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{1.0000} + 8\tabcolsep}@{}}{%
-\textbf{Panel A. Robustness and sensitivity checks}} \\
-Bilateral: all-first-permits denominator & Keeps the high-skilled
-employment-permit numerator, but changes the denominator to all first
-residence permits across family, education, employment, and other
-reasons & 0.000574 & 0.054 * & Positive and marginal; secondary to the
-labor-permit outcome \\
-Bilateral: ILOSTAT, no UK & Replaces Eurostat unemployment with ILOSTAT
-in the improved preferred weighted model & 0.003006 & 0.009 *** &
-Significant; result survives data-source swap \\
-Bilateral: ILOSTAT, with UK & Adds the UK using ILOSTAT unemployment in
-the improved preferred weighted model & 0.001359 & 0.460 n.s. & Not
-significant; not robust to UK inclusion \\
-Bilateral: core labor-entry measure & Uses only core labor-entry/admin
-restriction tools, still weighted by permit denominator and controlling
-for high-/low-skilled target-group policy paths & 0.003003 & 0.069 * &
-Positive and marginal; secondary \\
-Aggregate: broad outcome incl. Blue Card & Adds EU Blue Card permits to
-the high-skilled numerator in the aggregate model, with skill-target
-controls & -0.002279 & 0.367 n.s. & No support \\
-Bilateral: work-visa tool only & Uses only policy events tied directly
-to work-visa or work-permit tools in the improved preferred bilateral
-model & 0.006702 & 0.002 *** & Significant and larger than the all-tools
-preferred estimate \\
-Aggregate: fractional response & Uses a quasibinomial share model with
-the current all-migrant-worker measure and skill-target controls &
-0.046665 & 0.082 * & Positive but marginal; not main evidence \\
-\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{1.0000} + 8\tabcolsep}@{}}{%
-\textbf{Panel B. Placebo and long-difference diagnostics}} \\
-Non-EU treated group, lagged cumulative net policy change & Baseline
-aggregate comparison for the placebo: third-country workers are the
-group national labor-migration rules should affect & 0.001180 & 0.527
-n.s. & Positive, not significant in aggregate (N=308; G=30) \\
-EU27 placebo group, lagged cumulative net policy change & Repeats the
-same aggregate model on EU citizens, who have free movement rights and
-should not be directly affected by national labor-migration restrictions
-& 0.011629 & 0.086 * & Positive and marginal at 10 percent; weak placebo
-reassurance (N=38; G=13) \\
-Non-EU treated group, lagged annual policy flow & Checks whether newly
-adopted all-migrant-worker policy changes are associated with the
-following year\textquotesingle s Non-EU high-skilled share & 0.001339 &
-0.521 n.s. & Positive, not significant in aggregate (N=308; G=30) \\
-EU27 placebo group, lagged annual policy flow & Repeats the policy-flow
-test on EU citizens; a significant same-direction result would be a
-warning sign & 0.010176 & 0.076 * & Positive and marginal at 10 percent;
-noisy small sample (N=38; G=13) \\
-Long-difference check & Compares long-run changes over the 2008--2020
-window instead of annual within-country variation & -0.007443 & 0.342
-n.s. & No support (N=31) \\
+\multicolumn{5}{@{}l}{\textbf{Panel A. Robustness and sensitivity checks}} \\
+\addlinespace[2pt]
+Bilateral: all-first-permits denominator & Replaces the employment-permit denominator with all first residence permits & 0.000574* & 0.054 & Positive; marginal \\
+Bilateral: ILOSTAT, no UK & Replaces Eurostat unemployment with ILOSTAT & 0.003006*** & 0.009 & Significant; survives source change \\
+Bilateral: ILOSTAT, with UK & Adds the United Kingdom using ILOSTAT unemployment & 0.001359 & 0.460 & Not significant \\
+Bilateral: core labor-entry measure & Restricts the policy index to core labor-entry and administrative tools & 0.003003* & 0.069 & Positive; marginal \\
+Aggregate: broad outcome including Blue Card & Adds EU Blue Card permits to the high-skilled numerator & -0.002279 & 0.367 & No support \\
+Bilateral: work-visa tool only & Restricts the policy index to work-visa and work-permit events & 0.006702*** & 0.002 & Significant; larger estimate \\
+Aggregate: fractional response & Uses a quasibinomial fractional-response model for the share & 0.046665* & 0.082 & Positive; marginal \\
+\addlinespace[3pt]
+\multicolumn{5}{@{}l}{\textbf{Panel B. Placebo and long-difference diagnostics}} \\
+\addlinespace[2pt]
+Non-EU group, cumulative score & Aggregate treated-group benchmark & 0.001180 & 0.527 & Not significant (N=308; G=30) \\
+EU27 placebo, cumulative score & Applies the aggregate model to EU citizens with free-movement rights & 0.011629* & 0.086 & Weak placebo reassurance (N=38; G=13) \\
+Non-EU group, annual policy flow & Tests newly adopted policy changes against the following year's outcome & 0.001339 & 0.521 & Not significant (N=308; G=30) \\
+EU27 placebo, annual policy flow & Repeats the annual-flow test for EU citizens & 0.010176* & 0.076 & Warning sign; small sample (N=38; G=13) \\
+Long-difference check & Compares 2008--2020 changes rather than annual within-country variation & -0.007443 & 0.342 & No support (N=31) \\
 \end{longtable}
 }
 
-\TableNote{Panel A changes a model, outcome, sample, data source, or
-policy definition; Panel B provides falsification and long-difference
-diagnostics. Bilateral and aggregate coefficients are not directly
+\TableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Panel A changes a model,
+outcome, sample, data source, or policy definition; Panel B provides falsification
+and long-difference diagnostics. Bilateral and aggregate coefficients are not directly
 comparable because the designs, fixed effects, weighting, outcomes, and
 samples differ. The preferred result remains the weighted bilateral
 HSRate specification in Table 7. Supplementary aggregate sensitivity
@@ -2504,46 +2390,43 @@ the level outcome.
 
 \Needspace{7\baselineskip}\captionof{table}{Progressive aggregate specifications for the all-migrant-worker policy measure.}\label{tab:app-progressive}
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1149}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2118}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1193}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1231}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1090}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1120}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1067}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1031}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Model}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Outcome}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{β}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Cluster-robust SE}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{t}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{p (sig.)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{N}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{G}
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-M0 & HSRate & -0.000347 & 0.001958 & -0.18 & 0.861 n.s. & 370 & 31 \\
-M1 & HSRate & -0.000995 & 0.002131 & -0.47 & 0.644 n.s. & 370 & 31 \\
-M2 & HSRate & 0.000432 & 0.001897 & 0.23 & 0.821 n.s. & 340 & 31 \\
-M3 & HSRate & 0.001180 & 0.001843 & 0.64 & 0.527 n.s. & 308 & 30 \\
-M4 & log(1 + HSNumber) & 0.021726 & 0.020393 & 1.07 & 0.296 n.s. & 308 &
-30 \\
-\end{longtable}
-}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{3.8pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X*{5}{Y}@{}}
+\toprule
+ & \textbf{M0} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} \\
+\midrule
+Lagged all-migrant-worker policy score
+  & -0.000347 & -0.000995 & 0.000432 & 0.001180 & 0.021726 \\
+\textit{Cluster-robust SE}
+  & (0.001958) & (0.002131) & (0.001897) & (0.001843) & (0.020393) \\
+t-statistic
+  & -0.18 & -0.47 & 0.23 & 0.64 & 1.07 \\
+Exact p-value
+  & 0.861 & 0.644 & 0.821 & 0.527 & 0.296 \\
+\addlinespace[2pt]
+Outcome
+  & HSRate & HSRate & HSRate & HSRate & \makecell{log(1 +\\HSNumber)} \\
+Skill-target policy controls
+  & \no & \yes & \yes & \yes & \yes \\
+Lagged permit scale
+  & \no & \no & \yes & \yes & \yes \\
+Destination macro controls
+  & \no & \no & \no & \yes & \yes \\
+Destination fixed effects
+  & \yes & \yes & \yes & \yes & \yes \\
+Year fixed effects
+  & \yes & \yes & \yes & \yes & \yes \\
+\midrule
+Observations
+  & 370 & 370 & 340 & 308 & 308 \\
+Destination clusters
+  & 31 & 31 & 31 & 30 & 30 \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \subsection{A.2 Aggregate and bilateral specifications under preferred
 policy
@@ -2561,70 +2444,38 @@ fixed-effect-aware correction (beta = 0.002979, p = 0.031).
 
 \Needspace{7\baselineskip}\captionof{table}{Aggregate and bilateral specifications under the preferred policy design.}\label{tab:app-preferred}
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1694}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1472}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1853}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0920}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0918}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0642}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Spec.}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Policy measure}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Regressor}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{beta}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{SE}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{p (sig.)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{N}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{G}
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Aggregate cumulative (M3) & All-migrant-worker score; high- and
-low-skill policy scores as controls & Lagged cumulative
-all-migrant-worker policy score & 0.001180 & 0.001843 & 0.527 n.s. & 308
-& 30 \\
-Aggregate policy-flow & All-migrant-worker annual flow; high- and
-low-skill annual flows as controls & Lagged annual all-migrant-worker
-policy-flow score & 0.001339 & 0.002060 & 0.521 n.s. & 308 & 30 \\
-Level outcome (M4) & All-migrant-worker score; high- and low-skill
-policy scores as controls & Lagged cumulative all-migrant-worker policy
-score & 0.021726 & 0.020393 & 0.296 n.s. & 308 & 30 \\
-Preferred weighted bilateral & All-migrant-worker score; high- and
-low-skill policy scores as controls & Lagged cumulative
-all-migrant-worker policy score & 0.003278 & 0.001094 & 0.006 *** &
-6,301 & 30 \\
-High-skilled policy control & High-skill-targeted policy score (control)
-& Lagged cumulative high-skill-targeted policy score & 0.001900 &
-0.002246 & 0.404 n.s. & 6,301 & 30 \\
-Low-skilled policy control & Low-skill-targeted policy score (control) &
-Lagged cumulative low-skill-targeted policy score & -0.000652 & 0.002674
-& 0.809 n.s. & 6,301 & 30 \\
-Unweighted bilateral comparison & All-migrant-worker score; high- and
-low-skill policy scores as controls & Lagged cumulative
-all-migrant-worker policy score & 0.002979 & 0.001314 & 0.031 ** & 6,301
-& 30 \\
-Weighted corridor FE & All-migrant-worker score; high- and low-skill
-policy scores as controls & Lagged cumulative all-migrant-worker policy
-score & 0.002991 & 0.001002 & 0.006 *** & 6,301 & 30 \\
-Bilateral policy-flow & All-migrant-worker annual flow; high- and
-low-skill annual flows as controls & Lagged annual all-migrant-worker
-policy-flow score & 0.000533 & 0.001500 & 0.725 n.s. & 6,301 & 30 \\
-\end{longtable}
-}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{@{}L{4.8cm} C{1.6cm} C{1.6cm} C{1.0cm} C{1.8cm} C{1.2cm} C{1.1cm} C{0.8cm}@{}}
+\toprule
+\textbf{Specification / coefficient} & \(\boldsymbol{\beta}\) & \textbf{SE} & \textbf{p} &
+\makecell{\textbf{Skill-policy}\\\textbf{controls}} & \textbf{Weights} & \textbf{N} & \textbf{G} \\
+\midrule
+Aggregate cumulative (M3)
+  & 0.001180 & 0.001843 & 0.527 & Yes & No & 308 & 30 \\
+Aggregate annual policy flow
+  & 0.001339 & 0.002060 & 0.521 & Yes & No & 308 & 30 \\
+Aggregate log high-skilled count (M4)
+  & 0.021726 & 0.020393 & 0.296 & Yes & No & 308 & 30 \\
+\addlinespace[2pt]
+\textbf{Preferred weighted bilateral}
+  & \textbf{0.003278***} & \textbf{0.001094} & \textbf{0.006} & Yes & Yes & 6,301 & 30 \\
+\quad High-skill policy control
+  & 0.001900 & 0.002246 & 0.404 & -- & -- & 6,301 & 30 \\
+\quad Low-skill policy control
+  & -0.000652 & 0.002674 & 0.809 & -- & -- & 6,301 & 30 \\
+Unweighted bilateral comparison
+  & 0.002979** & 0.001314 & 0.031 & Yes & No & 6,301 & 30 \\
+Weighted bilateral with corridor FE
+  & 0.002991*** & 0.001002 & 0.006 & Yes & Yes & 6,301 & 30 \\
+Bilateral annual policy flow
+  & 0.000533 & 0.001500 & 0.725 & Yes & No & 6,301 & 30 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\TableNote{The reported coefficient is the lagged all-migrant-worker policy measure unless a row is explicitly identified as a policy-control coefficient. All bilateral specifications include origin-year fixed effects, lagged bilateral permit scale, and destination macro controls. *** $p<0.01$, ** $p<0.05$, * $p<0.10$.}
 
 \subsection{A.3 Aggregate checks and diagnostics for the
 all-migrant-worker policy
@@ -2642,67 +2493,43 @@ A.2.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0734}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.3168}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1284}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1283}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0838}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0723}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0627}}@{}}
+  L{(\linewidth - 12\tabcolsep) * \real{0.07}}
+  L{(\linewidth - 12\tabcolsep) * \real{0.39}}
+  C{(\linewidth - 12\tabcolsep) * \real{0.14}}
+  C{(\linewidth - 12\tabcolsep) * \real{0.14}}
+  C{(\linewidth - 12\tabcolsep) * \real{0.10}}
+  C{(\linewidth - 12\tabcolsep) * \real{0.08}}
+  C{(\linewidth - 12\tabcolsep) * \real{0.08}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Check}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Description}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{β}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{SE}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{p (sig.)}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{N}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{G}
-\end{minipage} \\
+\textbf{Check} & \textbf{Description} & \(\boldsymbol{\beta}\) &
+\textbf{SE} & \textbf{p} & \textbf{N} & \textbf{G} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
 A0 & All-migrant-worker cumulative baseline with skill-target controls &
-0.001180 & 0.001843 & 0.527 n.s. & 308 & 30 \\
+0.001180 & 0.001843 & 0.527 & 308 & 30 \\
 A1 & All-migrant-worker annual policy-flow with skill-target controls &
-0.001339 & 0.002060 & 0.521 n.s. & 308 & 30 \\
-R1 & Drop 2020 & 0.001817 & 0.001745 & 0.306 n.s. & 280 & 30 \\
-R2 & Broad outcome including Blue Card & -0.002279 & 0.002485 & 0.367
-n.s. & 308 & 30 \\
+0.001339 & 0.002060 & 0.521 & 308 & 30 \\
+R1 & Drop 2020 & 0.001817 & 0.001745 & 0.306 & 280 & 30 \\
+R2 & Broad outcome including Blue Card & -0.002279 & 0.002485 & 0.367 & 308 & 30 \\
 R3 & Work-visa policy channel only, aggregate & 0.003056 & 0.003281 &
-0.359 n.s. & 308 & 30 \\
-R5 & Drop six smallest destinations & 0.001630 & 0.001530 & 0.298 n.s. &
-249 & 24 \\
-R6 & Two-year moving-average Restrict & 0.000788 & 0.001980 & 0.693 n.s.
-& 308 & 30 \\
-R10 & Country-specific linear trends & 0.004681 & 0.003062 & 0.137 n.s.
-& 308 & 30 \\
-R11 & No zero-fill for all-missing reason cells & 0.001815 & 0.002352 &
-0.448 n.s. & 259 & 26 \\
+0.359 & 308 & 30 \\
+R5 & Drop six smallest destinations & 0.001630 & 0.001530 & 0.298 & 249 & 24 \\
+R6 & Two-year moving-average Restrict & 0.000788 & 0.001980 & 0.693 & 308 & 30 \\
+R10 & Country-specific linear trends & 0.004681 & 0.003062 & 0.137 & 308 & 30 \\
+R11 & No zero-fill for all-missing reason cells & 0.001815 & 0.002352 & 0.448 & 259 & 26 \\
 R12 & Weighted aggregate HSRate by permit denominator & 0.002053 &
-0.001284 & 0.121 n.s. & 308 & 30 \\
-R14 & Logit-transformed HSRate & 0.039398 & 0.045216 & 0.391 n.s. & 308
-& 30 \\
-R16 & First-difference policy change & 0.002039 & 0.001595 & 0.211 n.s.
-& 289 & 30 \\
-R17 & First-difference log HSNumber & 0.041321 & 0.022180 & 0.073 * &
-289 & 30 \\
-R18 & EU destinations only (cumulative) & 0.001159 & 0.001911 & 0.550
-n.s. & 286 & 27 \\
-P2 & EU27 placebo, cumulative & 0.011629 & 0.006227 & 0.086 * & 38 &
-13 \\
-P4 & EU27 placebo, policy flow & 0.010176 & 0.005247 & 0.076 * & 38 &
-13 \\
-P5 & Long-difference cross-country fit & -0.007443 & 0.007691 & 0.342
-n.s. & 31 & - \\
+0.001284 & 0.121 & 308 & 30 \\
+R14 & Logit-transformed HSRate & 0.039398 & 0.045216 & 0.391 & 308 & 30 \\
+R16 & First-difference policy change & 0.002039 & 0.001595 & 0.211 & 289 & 30 \\
+R17 & First-difference log HSNumber & 0.041321* & 0.022180 & 0.073 & 289 & 30 \\
+R18 & EU destinations only (cumulative) & 0.001159 & 0.001911 & 0.550 & 286 & 27 \\
+P2 & EU27 placebo, cumulative & 0.011629* & 0.006227 & 0.086 & 38 & 13 \\
+P4 & EU27 placebo, policy flow & 0.010176* & 0.005247 & 0.076 & 38 & 13 \\
+P5 & Long-difference cross-country fit & -0.007443 & 0.007691 & 0.342 & 31 & -- \\
 \end{longtable}
 }
+\TableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Standard errors are clustered by destination where applicable.}
 
 \end{document}

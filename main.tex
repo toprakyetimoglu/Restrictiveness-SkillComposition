@@ -640,7 +640,10 @@ policy-change score and the one-year lag of the all-migrant-worker
 annual policy-flow measure. Parallel high-skilled and low-skilled
 target-group policy measures enter as controls, because these targeted
 reforms can affect the numerator and denominator of HSRate more
-directly.
+directly. For the aggregate models, the outcome variables are
+constructed once from Non-EU permit totals and separately from fixed
+EU27 permit totals. The two samples are not pooled, so the aggregate
+notation does not require a citizenship-group index.
 
 The main outcome variable is the high-skilled share, HSRate. The
 high-skilled permit count, which adds the Eurostat categories for highly
@@ -679,11 +682,19 @@ permits is less noisy than the same share calculated from 10 permits.
 specifications}\label{regression-specifications}
 
 The three specifications below are presented in a fixed order, from the
-simplest aggregate model to the preferred bilateral one. The first
-model, Equation (1), is the aggregate two-way fixed-effects regression
-for the high-skilled share, estimated for the Non-EU group as the
-treated sample and then repeated for the EU27 group as a placebo. The
-focal coefficient is on the all-migrant-worker cumulative policy-change
+simplest aggregate model to the preferred bilateral one. Equations (1)
+and (2) each represent one common specification that is run separately
+on two aggregate panels. The main run uses permit totals summed across
+Non-EU citizenships. This is the policy-exposed sample because national
+labor-migration entry rules principally govern third-country nationals.
+The placebo run uses permit totals summed across the fixed EU27-2020
+citizenship composition, excluding the destination country itself. It
+applies the same policy regressors, macroeconomic controls, and fixed
+effects, but reconstructs HSNumber, HSRate, and PermitScale from EU27
+permit flows. Because EU citizens generally enter under free-movement
+rights rather than the national rules measured by Restrict, the EU27
+coefficient should be close to zero if the policy variable is isolating
+its intended channel. Equation (1) uses the cumulative policy-change
 score, while high-skilled and low-skilled target-group policy paths
 enter as controls:
 
@@ -702,12 +713,11 @@ enter as controls:
 \end{equation*}
 
 In Equation (1), d indexes destination countries and t indexes years.
-The equation is estimated separately for the Non-EU treated sample and
-the EU27 placebo sample. In each estimation, HSNumber, HSRate,
-EmploymentPermitFlow, and PermitScale are constructed from the permit
-flows of the relevant citizenship group. The aggregate panel does not
-contain individual-origin resolution: non-EU origins are collapsed into
-one Non-EU aggregate and EU27 origins into one EU27 aggregate. Equation
+There is no citizenship-group index because Non-EU and EU27 observations
+are not stacked in one regression; the displayed equation is estimated
+once for each separately constructed panel. Neither aggregate panel
+contains individual-origin resolution: non-EU origins are collapsed
+into one Non-EU total and EU27 origins into one EU27 total. Equation
 (3), introduced later in this section, instead retains individual
 origins and indexes them by o. Destination fixed effects are represented
 by alpha, year fixed effects by lambda, and the coefficient of interest
@@ -719,16 +729,16 @@ PermitScale controls for the size of the permit denominator from which
 the high-skilled share is calculated; it does not measure aggregate
 employment in the host economy.
 
-PermitScale is included in both the Non-EU regression and the EU27
-placebo regression, computed from each group\textquotesingle s own
-employment-permit flow. This is intentional: the placebo should mirror
-the treated-group specification as closely as possible, so the only
-substantive difference is the citizenship group being analyzed. Keeping
-the control in both equations makes the placebo test comparable rather
-than changing the model between groups.
+PermitScale is included in each group-specific model run and is computed
+from that sample\textquotesingle s own employment-permit flow. This is
+intentional: the EU27 placebo should mirror the Non-EU specification as
+closely as possible, so the citizenship sample is the only substantive
+difference between the two aggregate estimations. Keeping the same
+control structure makes their coefficients comparable.
 
-Equation (2) preserves the same controls and fixed effects as Equation
-(1) but replaces the cumulative policy stock with annual policy-flow
+Equation (2) follows the same separate Non-EU and EU27 estimation
+procedure. It preserves the controls and fixed effects from Equation (1)
+but replaces the cumulative policy stock with annual policy-flow
 measures. It tests whether newly adopted all-migrant-worker reforms in a
 given year are associated with the following year\textquotesingle s
 permit composition, while again controlling for newly adopted
@@ -850,17 +860,18 @@ identified from differential national policy variation within each
 origin-year, and Robustness 9 additionally controls for the directive
 windows that applied to participating destinations.
 
-The EU27 placebo, constructed using the fixed EU27-2020 citizenship
-composition, is interpreted as a limited falsification check. Because
-EU citizens generally have free-movement rights, national
-labor-migration restrictions aimed at third-country workers should not
-directly affect their legal entry in the same way, and the expected
-placebo coefficient is therefore close to zero. A statistically
-significant coefficient with the same sign as the Non-EU coefficient
-would instead warn that the policy variable may be proxying for
-destination-wide shocks. Accession timing, transitional restrictions,
-and the fact that free movers generally do not require residence permits
-make this placebo informative but imperfect.
+The separately estimated EU27 model described above is interpreted as a
+limited falsification check, not as a second treated sample. Because EU
+citizens generally have free-movement rights, national labor-migration
+restrictions aimed at third-country workers should not directly affect
+their legal entry in the same way. The expected EU27 coefficient is
+therefore close to zero. A statistically significant coefficient with
+the same sign as the Non-EU coefficient would instead warn that Restrict
+may be proxying for destination-wide shocks that influence both permit
+series. The fixed EU27-2020 composition, accession timing, transitional
+restrictions, sparse EU permit reporting, and the fact that free movers
+generally do not require residence permits make this placebo informative
+but imperfect rather than a clean untreated comparison group.
 
 Stricter causal alternatives were considered but are not used as the
 main design. A conventional difference-in-differences or event-study

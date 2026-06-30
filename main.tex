@@ -929,7 +929,7 @@ sampled destination for a given origin and year. They do not by
 themselves absorb differences created by non-EU destinations, national
 opt-outs, or Croatia's 2013 accession. The Restrict coefficient is
 identified from differential national policy variation within each
-origin-year, and Robustness 9 additionally controls for the directive
+origin-year, and Robustness 6 additionally controls for the directive
 windows that applied to participating destinations.
 
 Stricter causal alternatives were considered but are not used as the
@@ -1852,17 +1852,17 @@ permits than to the total volume of high-skilled entries.
 Checks}\label{robustness-sensitivity-and-diagnostic-checks}
 
 Section 8 brings the robustness, sensitivity, and diagnostic evidence
-together in Table~\ref{tab:robustness}. Panel A reports checks that alter the preferred
-denominator-weighted bilateral design or its outcome and control
-definitions. Panel B reports placebo and long-difference diagnostics,
-which test whether the relationship appears where the identification
-logic predicts it should and disappears where it should not. The two
-panels answer different questions, so their coefficients should not be
-read as estimates from one common model. The overall pattern is mixed
-but informative: the preferred bilateral result survives the no-UK
+together in Table~\ref{tab:robustness}. Panel A contains checks that
+re-estimate or directly modify the preferred denominator-weighted
+bilateral model. Panel B reports the two aggregate EU27 placebo
+comparisons that remain useful as falsification diagnostics. The panels
+answer different questions, so their coefficients should not be read as
+estimates from one common model. The overall pattern is mixed but
+informative: the preferred bilateral result survives the no-UK
 modeled-ILO control, the work-visa-only measure, and applicable EU
 directive-window controls. The origin-income results are heterogeneous,
-while the aggregate checks and placebo diagnostics are weaker.
+while the aggregate placebo evidence is cautionary rather than
+confirmatory.
 
 Within Panel B, the EU27 placebo is constructed only as an aggregate
 diagnostic. It sums permit counts across the fixed EU27-2020 citizenship
@@ -1900,30 +1900,25 @@ Bilateral: all-first-permits denominator & Replaces the employment-permit denomi
 Bilateral: ILOSTAT, no UK & Replaces Eurostat unemployment with ILOSTAT & 0.003006*** & 0.009 & Significant; survives source change \\
 Bilateral: ILOSTAT, with UK & Adds the United Kingdom using ILOSTAT unemployment & 0.001359 & 0.460 & Not significant \\
 Bilateral: core labor-entry measure & Restricts the policy index to core labor-entry and administrative tools & 0.003003* & 0.069 & Positive; marginal \\
-Aggregate: broad outcome including Blue Card & Adds EU Blue Card permits to the high-skilled numerator & -0.002279 & 0.367 & No support \\
 Bilateral: work-visa tool only & Restricts the policy index to work-visa and work-permit events & 0.006702*** & 0.002 & Significant; larger estimate \\
-Aggregate: fractional response & Uses a quasibinomial fractional-response model for the share & 0.046665* & 0.082 & Positive; marginal \\
 Bilateral: origin-income strata & Re-estimates the preferred model by World Bank FY2020 origin-income group & See text & Sig. & Positive for H/UM/LM; negative for L \\
 Bilateral: EU directive windows & Adds four destination-year directive-window controls where legally applicable & 0.003299*** & 0.006 & Preferred coefficient remains stable \\
 \addlinespace[3pt]
-\multicolumn{5}{@{}l}{\textbf{Panel B. Placebo and long-difference diagnostics}} \\
+\multicolumn{5}{@{}l}{\textbf{Panel B. Aggregate EU27 placebo diagnostics}} \\
 \addlinespace[2pt]
 Non-EU group, cumulative score & Aggregate treated-group benchmark & 0.001180 & 0.527 & Not significant (N=308; G=30) \\
 EU27 placebo, cumulative score & Applies the aggregate model to the fixed EU27-2020 citizenship group & 0.011629* & 0.086 & Cautionary, imperfect placebo (N=38; G=13) \\
 Non-EU group, annual policy flow & Tests newly adopted policy changes against the following year's outcome & 0.001339 & 0.521 & Not significant (N=308; G=30) \\
 EU27 placebo, annual policy flow & Repeats the annual-flow test for the fixed EU27-2020 citizenship group & 0.010176* & 0.076 & Warning sign; small sample (N=38; G=13) \\
-Long-difference check & Compares first-to-last available changes within 2008--2020 & -0.007443 & 0.342 & No support (N=31) \\
 \end{longtable}
 }
 
 \LongTableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Panel A changes a model,
-outcome, sample, data source, or policy definition; Panel B provides falsification
-and long-difference diagnostics. Bilateral and aggregate coefficients are not directly
+outcome, sample, data source, or policy definition within the preferred bilateral
+framework; Panel B provides limited aggregate falsification diagnostics. Bilateral and aggregate coefficients are not directly
 comparable because the designs, fixed effects, weighting, outcomes, and
 samples differ. The preferred result remains the weighted bilateral
-HSRate specification in Table 7. Supplementary aggregate sensitivity
-checks that drop the COVID-19 year or add country-specific linear trends
-are retained in Appendix Table A.3.}
+HSRate specification in Table 7.}
 
 Robustness 1 (all-first-permits denominator) tests whether the preferred
 result depends on using the narrower employment-permit denominator. It
@@ -1959,23 +1954,14 @@ level (\(\beta =\) 0.003003, p = 0.069). The check therefore supports
 the direction of the preferred result, but it should not be described as
 an additional five-percent significant result.
 
-A further aggregate outcome check adds EU Blue Card permits to the
-high-skilled numerator while retaining the skill-target policy controls.
-The resulting coefficient is negative and not statistically significant
-($\beta$ = -0.002279, p = 0.367). This result does not provide aggregate
-support for the association when the numerator is broadened to include
-Blue Card permits. It remains a secondary check, however, because Blue
-Card coverage is not uniform across the sample and the specification is
-an aggregate destination-year model rather than the preferred
-denominator-weighted bilateral design.
+Panel B of Table~\ref{tab:robustness} contains the aggregate EU27
+placebo diagnostics. They do not test the robustness of the preferred
+bilateral estimator. Instead, they ask whether the aggregate policy
+association also appears for a group that is less directly exposed to
+national labor-migration rules.
 
-Panel B of Table~\ref{tab:robustness} contains the placebo and long-difference diagnostics.
-Rather than simply altering a control or outcome definition, they ask
-whether the estimated relationship appears where the identification
-logic predicts it should appear and disappears where it should not.
-
-Robustness 3 (EU27 cumulative placebo) does not provide positive
-falsification support. Its coefficient is positive and marginal at the
+The cumulative EU27 placebo does not provide positive falsification
+support. Its coefficient is positive and marginal at the
 ten-percent level (0.011629, p = 0.086), whereas the aggregate Non-EU
 counterpart is small and imprecise (M3: 0.001180, p = 0.527). Because
 the EU27 estimate is based on only 38 observations and 13 destination
@@ -1989,13 +1975,11 @@ placebo does not directly invalidate the preferred bilateral estimate,
 but it makes the falsification evidence cautionary and inconclusive
 rather than reassuring.
 
-Robustness 4 (policy-flow placebo and long-difference) is also cautious.
-The EU27 policy-flow placebo is positive and marginal at the ten-percent
-level (\(\beta =\) 0.010176, p = 0.076), again on only 38 observations
-and 13 clusters. The long-difference check is negative and not
-significant (\(\beta =\) -0.007443, p = 0.342, N = 31). For this reason,
-the thesis treats the EU27 placebo and the long-difference exercise as
-diagnostics rather than as strong identification tests. A bilateral
+The annual-flow EU27 placebo is also positive and marginal at the
+ten-percent level (\(\beta =\) 0.010176, p = 0.076), again on only 38
+observations and 13 clusters. The thesis therefore treats both EU27
+results as limited diagnostics rather than as strong identification
+tests. A bilateral
 version of the EU27 placebo, which would have been the closest mirror of
 the preferred denominator-weighted bilateral design, is not run because
 EU-origin residence-permit cells are too sparse and selective to provide
@@ -2005,19 +1989,7 @@ individual EU citizenship rows, treating those permit observations as a
 bilateral migration-flow panel would not mirror the Non-EU outcome. The
 aggregate EU27 check is therefore retained only as a limited diagnostic.
 
-Robustness 5 (fractional-response) was added because the dependent
-variable is a share bounded between zero and one. Following the
-fractional-response logic of Papke and Wooldridge, the current
-controlled model uses a quasibinomial logit specification weighted by
-the permit denominator and clustered by destination. It produces a
-positive but marginal aggregate estimate for the all-migrant-worker
-cumulative measure (\(\beta =\) 0.046665, p = 0.082). It is therefore
-not used as the main model. The preferred approach keeps a linear share
-model because its coefficient is directly interpretable in
-percentage-point terms but uses denominator weights to address the most
-important measurement issue created by small permit cells.
-
-Robustness 6 replaces Eurostat unemployment with World Bank indicator
+Robustness 3 replaces Eurostat unemployment with World Bank indicator
 SL.UEM.TOTL.ZS, the modeled ILO unemployment estimate sourced from
 ILOSTAT (World Bank 2026), and estimates no-UK and UK-inclusive variants. The main
 Eurostat sample excludes the United Kingdom because the Eurostat control
@@ -2044,7 +2016,7 @@ inappropriate: the preferred result is conditional on the no-UK sample,
 and the Brexit-era measurement mismatch is a plausible explanation for
 the difference.
 
-Robustness 7 examines heterogeneity by origin income using the World
+Robustness 4 examines heterogeneity by origin income using the World
 Bank FY2020 income classification, published in 2019 and based on 2018
 Atlas-method GNI per capita (World Bank Data Team 2019). Under the
 improved controlled model, the association remains positive and
@@ -2067,7 +2039,7 @@ identifying a direction for future research, rather than as a direct
 test of why the composition response differs across origin-income
 groups.
 
-Robustness 8 isolates the single most-targeted policy instrument. The
+Robustness 5 isolates the single most-targeted policy instrument. The
 preferred Restrict measure sums signed magnitude-weighted events across
 all policy tools retained in the Legal entry and stay area. The
 work-visa-only Restrict measure (Restrict\_WorkVisa\_lag1) instead uses
@@ -2098,7 +2070,7 @@ It remains a robustness check because the all-tools preferred measure is
 the more conservative summary of overall labor-migration restrictiveness
 and matches the policy-area definition stated in Section 6.2.
 
-Robustness 9 addresses a related concern that European destinations
+Robustness 6 addresses a related concern that European destinations
 operate under common EU labor-migration directives. If an EU-level
 reform happened to coincide with national reforms recorded in
 DEMIG-QuantMig, the Restrict coefficient could partly capture the
@@ -2139,19 +2111,19 @@ line marks zero.
 \includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{figures/graph2_robustness_coefficient_plot.pdf}
 \end{center}
 
-\captionof{figure}{Coefficient estimates across main, robustness, and placebo specifications. Coefficients are shown in percentage-point units; bars are 95 percent confidence intervals from reported standard errors. Preferred bilateral rows report the all-migrant-worker coefficient from specifications that control for skilled/high-skilled and low-skilled target-group policy changes. Robustness rows include the all-first-permits denominator, modeled ILO unemployment with and without the United Kingdom, the high-income-origins stratum from the origin-income heterogeneity check (Robustness 7), the work-visa-only Restrict narrowing (Robustness 8), and legally applicable EU directive-window controls (Robustness 9). The placebo rows are the EU27 cumulative placebo and the available-endpoint long-difference check within 2008--2020.}\label{graph:coefficients}
+\captionof{figure}{Coefficient estimates across main, robustness, and placebo specifications. Coefficients are shown in percentage-point units; bars are 95 percent confidence intervals from reported standard errors. Preferred bilateral rows report the all-migrant-worker coefficient from specifications that control for skilled/high-skilled and low-skilled target-group policy changes. Robustness rows include the all-first-permits denominator, modeled ILO unemployment with and without the United Kingdom, the core labor-entry measure, the high-income-origins stratum from the origin-income heterogeneity check (Robustness 4), the work-visa-only Restrict narrowing (Robustness 5), and legally applicable EU directive-window controls (Robustness 6). The placebo row reports the limited aggregate EU27 cumulative diagnostic.}\label{graph:coefficients}
 
 Graph 2 reinforces the tables: evidence is strongest in the controlled
-bilateral specifications, while aggregate estimates, UK inclusion, and
-the long-difference diagnostic are not significant. The EU27 placebo
-remains weak and the broad-denominator check secondary.
+bilateral specifications, while the aggregate estimates and UK-inclusive
+check are not significant. The EU27 placebo remains weak and the
+broad-denominator check secondary.
 
 \clearpage
 \begin{center}
 \includegraphics[width=\linewidth,height=0.72\textheight,keepaspectratio]{figures/graph3_eu_directives.pdf}
 \end{center}
 
-\captionof{figure}{EU labor-migration directives in the panel window. Panel A reports the coefficient of each EU directive dummy in the preferred denominator-weighted bilateral specification (Robustness 9, spec c), in percentage points of the high-skilled share, with 95-percent cluster-robust confidence intervals. Filled dots indicate $p<0.05$. The regression dummies apply only to participating EU members in the relevant year: Croatia enters from 2013, while Denmark and Ireland are excluded. Panel B shows each directive's adoption year (diamond), transposition window (shaded bar), and deadline (open circle) between 2008 and 2020.}\label{graph:directives}
+\captionof{figure}{EU labor-migration directives in the panel window. Panel A reports the coefficient of each EU directive dummy in the preferred denominator-weighted bilateral specification (Robustness 6, spec c), in percentage points of the high-skilled share, with 95-percent cluster-robust confidence intervals. Filled dots indicate $p<0.05$. The regression dummies apply only to participating EU members in the relevant year: Croatia enters from 2013, while Denmark and Ireland are excluded. Panel B shows each directive's adoption year (diamond), transposition window (shaded bar), and deadline (open circle) between 2008 and 2020.}\label{graph:directives}
 
 Graph 3 is a timing diagnostic: the preferred Restrict coefficient
 remains similar after EU-directive windows are controlled.
@@ -2270,12 +2242,7 @@ permits issued, part of the estimated association may reflect unobserved
 political dynamics rather than the independent effect of restrictiveness
 itself.
 
-Two methodological extensions follow from these limitations. First,
-fractional-response models are formally suitable for shares bounded on
-{[}0, 1{]}. In this dataset, however, they are less transparent than the
-denominator-weighted linear specification and do not change the
-substantive interpretation. They are therefore retained as a robustness
-check rather than used as the preferred estimator. Second, the
+One methodological extension follows from these limitations. The
 high-skilled migration literature emphasizes migrant networks, wage
 premia, origin unemployment, quality-of-life indicators, and
 origin-destination migration costs as important controls. The available
@@ -2523,11 +2490,6 @@ Ortega, F., \& Peri, G. (2013). The effect of income and immigration
 policies on international migration. \emph{Migration Studies, 1}(1),
 47--74.
 
-Papke, L. E., \& Wooldridge, J. M. (1996). Econometric Methods for
-Fractional Response Variables with an Application to 401(k) Plan
-Participation Rates. \emph{Journal of Applied Econometrics, 11}(6),
-619-632.
-
 Peri, G. (2012). The Effect of Immigration on Productivity: Evidence
 from U.S. States. \emph{Review of Economics and Statistics, 94}(1),
 348--358.
@@ -2668,61 +2630,5 @@ Bilateral annual policy flow
 \end{tabular}
 \end{center}
 \TableNote{The reported coefficient is the lagged all-migrant-worker policy measure unless a row is explicitly identified as a policy-control coefficient. All bilateral specifications include origin-year fixed effects, lagged bilateral permit scale, and destination macro controls. *** $p<0.01$, ** $p<0.05$, * $p<0.10$.}
-
-\subsection{A.3 Aggregate checks and diagnostics for the
-all-migrant-worker policy
-specification}\label{a.3-aggregate-checks-and-diagnostics-for-the-all-migrant-worker-policy-specification}
-
-Table A.3 collects aggregate country-year robustness checks and
-diagnostics for the all-migrant-worker policy specification. It shows
-that the aggregate HSRate analyses do not produce a five-percent
-significant result; it also reports the marginal ten-percent
-first-difference HSNumber result and the placebo diagnostics. The
-preferred bilateral evidence is reported separately in Table 7 and Table
-A.2.
-
-\Needspace{7\baselineskip}\captionof{table}{Aggregate robustness checks and diagnostics for the all-migrant-worker policy specification.}\label{tab:app-diagnostics}
-
-{\def\LTcaptype{none} % do not increment counter
-\setlength{\LTpost}{0pt}
-\begin{longtable}[]{@{}
-  L{(\linewidth - 12\tabcolsep) * \real{0.07}}
-  L{(\linewidth - 12\tabcolsep) * \real{0.39}}
-  C{(\linewidth - 12\tabcolsep) * \real{0.14}}
-  C{(\linewidth - 12\tabcolsep) * \real{0.14}}
-  C{(\linewidth - 12\tabcolsep) * \real{0.10}}
-  C{(\linewidth - 12\tabcolsep) * \real{0.08}}
-  C{(\linewidth - 12\tabcolsep) * \real{0.08}}@{}}
-\toprule\noalign{}
-\textbf{Check} & \textbf{Description} & \(\boldsymbol{\beta}\) &
-\textbf{SE} & \textbf{p} & \textbf{N} & \textbf{G} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-A0 & All-migrant-worker cumulative baseline with skill-target controls &
-0.001180 & 0.001843 & 0.527 & 308 & 30 \\
-A1 & All-migrant-worker annual policy-flow with skill-target controls &
-0.001339 & 0.002060 & 0.521 & 308 & 30 \\
-R1 & Drop 2020 & 0.001817 & 0.001745 & 0.306 & 280 & 30 \\
-R2 & Broad outcome including Blue Card & -0.002279 & 0.002485 & 0.367 & 308 & 30 \\
-R3 & Work-visa policy channel only, aggregate & 0.003056 & 0.003281 &
-0.359 & 308 & 30 \\
-R5 & Drop six smallest destinations & 0.001630 & 0.001530 & 0.298 & 249 & 24 \\
-R6 & Two-year moving-average Restrict & 0.000788 & 0.001980 & 0.693 & 308 & 30 \\
-R10 & Country-specific linear trends & 0.004681 & 0.003062 & 0.137 & 308 & 30 \\
-R11 & No zero-fill for all-missing reason cells & 0.001815 & 0.002352 & 0.448 & 259 & 26 \\
-R12 & Weighted aggregate HSRate by permit denominator & 0.002053 &
-0.001284 & 0.121 & 308 & 30 \\
-R14 & Logit-transformed HSRate & 0.039398 & 0.045216 & 0.391 & 308 & 30 \\
-R16 & First-difference policy change & 0.002039 & 0.001595 & 0.211 & 289 & 30 \\
-R17 & First-difference log HSNumber & 0.041321* & 0.022180 & 0.073 & 289 & 30 \\
-R18 & EU destinations only (cumulative) & 0.001159 & 0.001911 & 0.550 & 286 & 27 \\
-P2 & EU27 placebo, cumulative & 0.011629* & 0.006227 & 0.086 & 38 & 13 \\
-P4 & EU27 placebo, policy flow & 0.010176* & 0.005247 & 0.076 & 38 & 13 \\
-P5 & First-to-last available endpoint fit within 2008--2020 & -0.007443 & 0.007691 & 0.342 & 31 & -- \\
-\end{longtable}
-}
-\LongTableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Standard errors are clustered by destination where applicable.}
 
 \end{document}

@@ -682,13 +682,23 @@ permits is less noisy than the same share calculated from 10 permits.
 \subsection{5.2 Regression
 specifications}\label{regression-specifications}
 
-The three specifications below are presented in a fixed order, from the
-simplest aggregate model to the preferred bilateral one. Equation (1)
-is the aggregate two-way fixed-effects model for the policy-exposed
-Non-EU sample. Its destination-year outcomes are constructed by summing
-permit counts across Non-EU citizenships. The equation uses the
-cumulative policy-change score, while high-skilled and low-skilled
-target-group policy paths enter as controls:
+The empirical analysis uses four specifications, each with a distinct
+role. Specification 1 is the aggregate cumulative-policy benchmark.
+Specification 2 replaces the cumulative measure with annual policy
+flows. Specification 3 is the preferred denominator-weighted bilateral
+share model and provides the main estimate. Specification 4 applies
+PPML to bilateral permit counts to determine whether the compositional
+result is accompanied by a change in migration volume. The
+specifications are introduced in that order below so that the dependent
+variable, identifying variation, and purpose of each model are clear
+before the results are reported.
+
+\noindent\textbf{Specification 1: Aggregate cumulative-policy model.}
+Equation (1) is the aggregate two-way fixed-effects model for the
+policy-exposed Non-EU sample. Its destination-year outcomes are
+constructed by summing permit counts across Non-EU citizenships. The
+equation uses the cumulative policy-change score, while high-skilled and
+low-skilled target-group policy paths enter as controls:
 
 \begin{equation*}
 \begin{aligned}
@@ -724,13 +734,24 @@ In the aggregate model, PermitScale is computed from the lagged Non-EU
 employment-permit flow for the same destination. It therefore matches
 the permit universe used to construct the aggregate Non-EU outcome.
 
-Equation (2) uses the same Non-EU aggregate panel, controls, and fixed
-effects as Equation (1), but replaces the cumulative policy stock with
-annual policy-flow measures. It tests whether newly adopted
-all-migrant-worker reforms in a given year are associated with the
-following year\textquotesingle s permit composition, while again
-controlling for newly adopted high-skilled and low-skilled target-group
-reforms:
+For transparency, Table 6 introduces the aggregate controls
+progressively. M0 contains destination and year fixed effects; M1 adds
+the high-skilled and low-skilled policy controls; M2 adds PermitScale;
+and M3 adds lagged destination unemployment and GDP growth. M3 is the
+full aggregate HSRate specification represented by Equation (1). M4
+uses the same full controls with \(\log(1+\mathrm{HSNumber})\) as an
+aggregate count comparison. M0--M2 show how the coefficient changes as
+controls are introduced; they are not alternatives to the preferred
+bilateral model.
+
+\medskip\noindent\textbf{Specification 2: Aggregate annual policy-flow
+model.} Equation (2) uses the same Non-EU aggregate panel, controls, and
+fixed effects as the full aggregate model in Equation (1), but replaces
+the cumulative policy stock with annual policy-flow measures. It tests
+whether newly adopted all-migrant-worker reforms in a given year are
+associated with the following year\textquotesingle s permit composition,
+while again controlling for newly adopted high-skilled and low-skilled
+target-group reforms:
 
 \begin{equation*}
 \begin{aligned}
@@ -746,7 +767,9 @@ reforms:
 \tag{2}
 \end{equation*}
 
-The preferred specification is bilateral and denominator-weighted. It
+\medskip\noindent\textbf{Specification 3: Preferred bilateral share
+model.} The preferred specification is bilateral and
+denominator-weighted. It
 estimates the high-skilled permit share for each origin-destination-year
 corridor as a function of the lagged cumulative net policy-change score
 for all-migrant-worker reforms, lagged cumulative policy-change scores
@@ -785,7 +808,7 @@ small-denominator permit cells.
 \end{equation*}
 
 In Equation (3), o indexes origin countries and mu represents
-origin-year fixed effects. RestrictAll is the cumulative net
+origin-year fixed effects. \mbox{RestrictAll} is the cumulative net
 policy-change score for all-migrant-worker reforms and remains the
 coefficient of interest. RestrictHS and RestrictLS are parallel
 cumulative scores for reforms targeting skilled/high-skilled workers and
@@ -803,24 +826,45 @@ origin-side labor-market conditions and multilateral resistance to
 migration, while the weights account for the fact that the dependent
 share is measured with different precision across cells.
 
-A companion count-outcome specification addresses the volume side of the
-question. It is a Poisson Pseudo-Maximum-Likelihood (PPML) test on the
-same bilateral panel, following Santos Silva and Tenreyro (2006). The
-PPML specification estimates the count outcome as a function of the
-all-migrant-worker Restrict measure, the skilled/high-skilled and
-low-skilled target-group policy controls, destination macro controls,
-destination fixed effects, and origin-year fixed effects, with standard
-errors clustered by destination. The coefficient is interpreted as the
-percent change in the count outcome per one-unit change in the
-all-migrant-worker Restrict measure. PPML is useful here because it
-handles zero counts in the bilateral panel without the log-of-zero
+\medskip\noindent\textbf{Specification 4: Bilateral PPML volume model.}
+The final specification addresses the volume side of the question. It
+applies Poisson Pseudo-Maximum-Likelihood (PPML) to the same bilateral
+panel, following Santos Silva and Tenreyro (2006):
+
+\begin{equation*}
+\begin{aligned}
+\operatorname{E}\!\left[Y_{o,d,t}\mid X_{o,d,t}\right] =
+\exp\!\big(&\alpha_d + \mu_{o,t}
++ \beta\,\operatorname{RestrictAll}_{d,t-1}
++ \theta_{HS}\,\operatorname{RestrictHS}_{d,t-1} \\
+&+ \theta_{LS}\,\operatorname{RestrictLS}_{d,t-1}
++ \delta\,\operatorname{Unemployment}_{d,t-1}
++ \varphi\,\operatorname{GDPGrowth}_{d,t-1}\big).
+\end{aligned}
+\tag{4}
+\end{equation*}
+
+Equation (4) is estimated twice. First, \(Y_{o,d,t}\) is HSNumber, which
+tests whether Restrict is associated with the absolute number of
+high-skilled permits. Second, \(Y_{o,d,t}\) is the total
+employment-permit count, which tests whether the denominator of HSRate
+changes. Both PPML models include the all-migrant-worker policy measure,
+the high-skilled and low-skilled policy controls, lagged destination
+unemployment and GDP growth, destination fixed effects, and origin-year
+fixed effects. Standard errors are clustered by destination. Unlike the
+share specifications, Equation (4) does not include PermitScale or
+denominator weights: it models the permit count itself rather than the
+precision of a calculated share. The exact percentage change associated
+with a one-unit increase in Restrict is
+\(100[\exp(\beta)-1]\), which is approximately \(100\beta\) for a small
+coefficient. PPML retains zero-count cells and avoids the log-of-zero
 problem that would affect an OLS-on-log specification.
 
-Taken together, these three equations distinguish the aggregate share
-model, the policy-flow alternative, and the bilateral origin-year
-fixed-effects model on the same share outcome (HSRate). The empirical
-results are reported only after the identification logic, set out in the
-following section, has been introduced.
+The hierarchy is therefore explicit. Specifications 1 and 2 are
+aggregate benchmarks, Specification 3 is the preferred compositional
+model, and Specification 4 is the supporting volume test. The empirical
+results are reported only after the identification logic in the
+following section has been introduced.
 
 \subsection{5.3 Identification and
 inference}\label{identification-and-inference}

@@ -1749,31 +1749,69 @@ bilateral specification ($\beta$ = 0.003278, p = 0.006, N = 6,301; bootstrap p
 aggregate all-migrant-worker cumulative and annual-flow models are not
 significant, the total employment-permit denominator is essentially flat
 in both the aggregate and bilateral panels, and the bilateral
-high-skilled permit count is positive in the PPML comparison ($\beta$ =
-0.0199) but not significant at the five-percent level. The evidence
-therefore concerns the relative skill mix of employment-related permits
-rather than a robust increase in the absolute number of high-skilled
-entries.
+high-skilled permit count is positive in the PPML comparison but not
+significant at the five-percent level. The evidence therefore concerns
+the relative skill mix of employment-related permits rather than a
+robust increase in the absolute number of high-skilled entries.
 
-The PPML statistical detail is as follows. The high-skilled count
-returns a semi-elasticity of \(\beta =\) 0.0199 (SE = 0.0105, p = 0.069,
-N = 6,301, G = 30) after adding the same high-skilled and low-skilled
-target-group policy controls used in the improved preferred share model.
-PPML on the total employment-permit count returns \(\beta =\) -0.0008
-(SE = 0.0207, p = 0.969). The high-skilled count is therefore positive
-but only marginal at the 10-percent level, while the total
-employment-permit denominator is essentially flat. The difference
-between the two semi-elasticities implies a composition shift of roughly
-2 percent per Restrict unit, close to the OLS-weighted share result of
-about 1.6 percent of the mean. The two estimators therefore point in the
-same direction: composition shifts upward, while neither absolute count
-moves significantly at the five-percent level. The significant HSRate
-result therefore identifies a relative shift in permit composition, but
-it cannot separately establish whether that shift reflects fewer
-lower-skilled permits, more high-skilled permits, or both. This pattern
-is consistent with the entry-channel-elasticity mechanism, but it does
-not directly establish the separate permit-count responses underlying
-the compositional shift.
+\Needspace{14\baselineskip}\captionof{table}{PPML estimates for bilateral permit-count outcomes.}\label{tab:ppml-results}
+
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{0.90\linewidth}{@{}>{\RaggedRight\arraybackslash}X*{2}{Y}@{}}
+\toprule
+ & \makecell{\textbf{(1)}\\\textbf{High-skilled}\\\textbf{permit count}}
+ & \makecell{\textbf{(2)}\\\textbf{Total employment-}\\\textbf{permit count}} \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Policy coefficient}} \\
+Lagged cumulative all-migrant-worker score
+  & 0.019855* & -0.000816 \\
+\textit{Cluster-robust SE}
+  & (0.010510) & (0.020718) \\
+Exact p-value
+  & 0.0689 & 0.9688 \\
+\addlinespace[2pt]
+\multicolumn{3}{@{}l}{\textit{Specification}} \\
+High-skilled policy control
+  & \yes & \yes \\
+Low-skilled policy control
+  & \yes & \yes \\
+Destination macro controls
+  & \yes & \yes \\
+Destination fixed effects
+  & \yes & \yes \\
+Origin-year fixed effects
+  & \yes & \yes \\
+Lagged PermitScale control
+  & \no & \no \\
+Permit-denominator weights
+  & \no & \no \\
+\midrule
+Observations
+  & 6,301 & 6,301 \\
+Destination clusters
+  & 30 & 30 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\TableNote{Poisson Pseudo-Maximum-Likelihood estimates corresponding to Equation (4). The dependent variable is HSNumber in column (1) and the total employment-permit count, EMP, in column (2). Both models include lagged destination unemployment and GDP growth. Standard errors clustered by destination are reported in parentheses. Coefficients are semi-elasticities; the exact percentage change associated with one Restrict unit is \(100[\exp(\beta)-1]\). *** \(p<0.01\), ** \(p<0.05\), * \(p<0.10\).}
+
+Column (1) of Table~\ref{tab:ppml-results} is positive but only marginal
+at the 10-percent level, while column (2) is close to zero. The
+difference between the two semi-elasticities implies a composition shift
+of roughly 2 percent per Restrict unit, close to the weighted share
+result of about 1.6 percent of the mean. The two estimators therefore
+point in the same direction: composition shifts upward, while neither
+absolute count moves significantly at the five-percent level. The
+significant HSRate result therefore identifies a relative shift in permit
+composition, but it cannot separately establish whether that shift
+reflects fewer lower-skilled permits, more high-skilled permits, or both.
+This pattern is consistent with the entry-channel-elasticity mechanism,
+but it does not directly establish the separate permit-count responses
+underlying the compositional shift.
 
 This interpretation is also consistent with the contrast between
 aggregate and bilateral specifications. Under the synchronized design,
@@ -1805,7 +1843,7 @@ permits than to the total volume of high-skilled entries.
 Checks}\label{robustness-sensitivity-and-diagnostic-checks}
 
 Section 8 brings the robustness, sensitivity, and diagnostic evidence
-together in Table 8. Panel A reports checks that alter the preferred
+together in Table~\ref{tab:robustness}. Panel A reports checks that alter the preferred
 denominator-weighted bilateral design or its outcome and control
 definitions. Panel B reports placebo and long-difference diagnostics,
 which test whether the relationship appears where the identification
@@ -1921,7 +1959,7 @@ Card coverage is not uniform across the sample and the specification is
 an aggregate destination-year model rather than the preferred
 denominator-weighted bilateral design.
 
-Panel B of Table 8 contains the placebo and long-difference diagnostics.
+Panel B of Table~\ref{tab:robustness} contains the placebo and long-difference diagnostics.
 Rather than simply altering a control or outcome definition, they ask
 whether the estimated relationship appears where the identification
 logic predicts it should appear and disappears where it should not.

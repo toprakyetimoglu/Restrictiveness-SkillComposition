@@ -773,9 +773,12 @@ target-group reforms:
 \end{equation*}
 
 \medskip\noindent\textbf{Specification 3: Preferred bilateral share
-model.} The preferred specification is bilateral and
-denominator-weighted. It
-estimates the high-skilled permit share for each origin-destination-year
+model.} Bilateral describes the observation level: each observation is
+an origin-destination-year cell. Denominator-weighted describes the
+estimation: cells with larger employment-permit denominators receive
+more influence. The preferred model is therefore a
+denominator-weighted bilateral specification. It estimates the
+high-skilled permit share for each origin-destination-year
 corridor as a function of the lagged cumulative net policy-change score
 for all-migrant-worker reforms, lagged cumulative policy-change scores
 for skilled/high-skilled and low-skilled target groups, lagged bilateral
@@ -2073,7 +2076,7 @@ governing the general work-permit channel through which a lower-skilled
 candidate would typically enter. Because this tool directly governs the
 general work-permit channel, it provides a focused, though not
 isolating, robustness check of the proposed mechanism. The preferred
-bilateral weighted specification is re-estimated on the same N = 6,301
+denominator-weighted bilateral specification is re-estimated on the same N = 6,301
 cells and G = 30 clustered destinations, with destination fixed effects,
 origin-year fixed effects, the skill-targeted policy controls, the full
 lagged economic control set, and the employment-permit denominator
@@ -2102,7 +2105,7 @@ DEMIG-QuantMig, the Restrict coefficient could partly capture the
 supranational shock. Origin-year fixed effects absorb only the component
 common to every destination for a given origin-year; they do not absorb
 different exposure caused by non-EU destinations, opt-outs, or accession
-timing. The improved preferred weighted specification is therefore
+timing. The preferred denominator-weighted bilateral specification is therefore
 re-estimated with controls for the transposition
 windows of the four major EU labor-migration directives during the panel
 period: the Blue Card Directive 2009/50/EC (window 2009-2011), the
@@ -2148,7 +2151,7 @@ remains weak and the broad-denominator check secondary.
 \includegraphics[width=\linewidth,height=0.72\textheight,keepaspectratio]{figures/graph3_eu_directives.pdf}
 \end{center}
 
-\captionof{figure}{EU labor-migration directives in the panel window. Panel A reports the coefficient of each EU directive dummy in the preferred bilateral weighted specification (Robustness 9, spec c), in percentage points of the high-skilled share, with 95-percent cluster-robust confidence intervals. Filled dots indicate $p<0.05$. The regression dummies apply only to participating EU members in the relevant year: Croatia enters from 2013, while Denmark and Ireland are excluded. Panel B shows each directive's adoption year (diamond), transposition window (shaded bar), and deadline (open circle) between 2008 and 2020.}\label{graph:directives}
+\captionof{figure}{EU labor-migration directives in the panel window. Panel A reports the coefficient of each EU directive dummy in the preferred denominator-weighted bilateral specification (Robustness 9, spec c), in percentage points of the high-skilled share, with 95-percent cluster-robust confidence intervals. Filled dots indicate $p<0.05$. The regression dummies apply only to participating EU members in the relevant year: Croatia enters from 2013, while Denmark and Ireland are excluded. Panel B shows each directive's adoption year (diamond), transposition window (shaded bar), and deadline (open circle) between 2008 and 2020.}\label{graph:directives}
 
 Graph 3 is a timing diagnostic: the preferred Restrict coefficient
 remains similar after EU-directive windows are controlled.

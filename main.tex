@@ -650,9 +650,9 @@ Pseudo-Maximum-Likelihood (PPML) test in Section 7.3. The share outcome
 divides that count by the broader employment-related first-permit flow
 in the same cell:
 
-\[ \operatorname{HSNumber}_{d,t,g} = \operatorname{HighSkilledWorkerPermits}_{d,t,g} + \operatorname{ResearcherPermits}_{d,t,g} \]
+\[ \operatorname{HSNumber}_{d,t} = \operatorname{HighSkilledWorkerPermits}_{d,t} + \operatorname{ResearcherPermits}_{d,t} \]
 
-\[ \operatorname{HSRate}_{d,t,g} = \frac{\operatorname{HSNumber}_{d,t,g}}{\operatorname{EmploymentPermitFlow}_{d,t,g}} \]
+\[ \operatorname{HSRate}_{d,t} = \frac{\operatorname{HSNumber}_{d,t}}{\operatorname{EmploymentPermitFlow}_{d,t}} \]
 
 For clarity, the control for the size of the permit channel is labelled
 PermitScale. PermitScale is the logged lagged number of all
@@ -673,7 +673,7 @@ weight. This is not a second outcome variable. It is a precision
 adjustment: a high-skilled share calculated from 5,000 employment
 permits is less noisy than the same share calculated from 10 permits.
 
-\[ \operatorname{PermitScale}_{d,t-1,g} = \log\!\left(1 + \operatorname{EmploymentPermitFlow}_{d,t-1,g}\right) \]
+\[ \operatorname{PermitScale}_{d,t-1} = \log\!\left(1 + \operatorname{EmploymentPermitFlow}_{d,t-1}\right) \]
 
 \subsection{5.2 Regression
 specifications}\label{regression-specifications}
@@ -689,41 +689,35 @@ enter as controls:
 
 \begin{equation*}
 \begin{aligned}
-\operatorname{HSRate}_{d,t,g} ={}& \alpha_d + \lambda_t
+\operatorname{HSRate}_{d,t} ={}& \alpha_d + \lambda_t
 + \beta\,\operatorname{RestrictAll}_{d,t-1}
 + \theta_{HS}\,\operatorname{RestrictHS}_{d,t-1} \\
 &+ \theta_{LS}\,\operatorname{RestrictLS}_{d,t-1}
-+ \gamma\,\operatorname{PermitScale}_{d,t-1,g} \\
++ \gamma\,\operatorname{PermitScale}_{d,t-1} \\
 &+ \delta\,\operatorname{Unemployment}_{d,t-1}
 + \varphi\,\operatorname{GDPGrowth}_{d,t-1}
-+ \varepsilon_{d,t,g}.
++ \varepsilon_{d,t}.
 \end{aligned}
 \tag{1}
 \end{equation*}
 
-In Equation (1), d indexes destination countries, t indexes years, and g
-indexes the citizenship group. Each destination-year cell appears twice
-in the aggregate panel, once for g = Non-EU (the treated group) and once
-for g = EU27 (the placebo group). The aggregate panel does not contain
-origin-country resolution: individual non-EU origins are collapsed into
-a single Non-EU aggregate, and individual EU27 origins are collapsed
-into a single EU27 aggregate. The bilateral specification in Equation
-(3), introduced later in this section, retains origin-country resolution
-and uses the index o for the individual origin country, which is
-conceptually distinct from g. The letter g is used because the index
-represents a binary partition that captures the legal distinction
-between third-country nationals subject to national labor-migration
-rules and EU27 citizens with free-movement rights; the placebo design
-developed in Section 5.3 depends on this binary cut, which cannot be
-expressed at the individual origin-country level. Destination fixed
-effects are represented by alpha, year fixed effects by lambda, and the
-coefficient of interest is beta on RestrictAll, the lagged cumulative
-net policy-change score for all-migrant-worker reforms. RestrictHS and
-RestrictLS are included as policy controls because they capture reforms
-that directly target the high-skilled numerator or the lower-skilled
-part of the denominator. PermitScale controls for the size of the permit
-denominator from which the high-skilled share is calculated; it does not
-measure aggregate employment in the host economy.
+In Equation (1), d indexes destination countries and t indexes years.
+The equation is estimated separately for the Non-EU treated sample and
+the EU27 placebo sample. In each estimation, HSNumber, HSRate,
+EmploymentPermitFlow, and PermitScale are constructed from the permit
+flows of the relevant citizenship group. The aggregate panel does not
+contain individual-origin resolution: non-EU origins are collapsed into
+one Non-EU aggregate and EU27 origins into one EU27 aggregate. Equation
+(3), introduced later in this section, instead retains individual
+origins and indexes them by o. Destination fixed effects are represented
+by alpha, year fixed effects by lambda, and the coefficient of interest
+is beta on RestrictAll, the lagged cumulative net policy-change score for
+all-migrant-worker reforms. RestrictHS and RestrictLS are included as
+policy controls because they capture reforms that directly target the
+high-skilled numerator or the lower-skilled part of the denominator.
+PermitScale controls for the size of the permit denominator from which
+the high-skilled share is calculated; it does not measure aggregate
+employment in the host economy.
 
 PermitScale is included in both the Non-EU regression and the EU27
 placebo regression, computed from each group\textquotesingle s own
@@ -742,14 +736,14 @@ high-skilled and low-skilled target-group reforms:
 
 \begin{equation*}
 \begin{aligned}
-\operatorname{HSRate}_{d,t,g} ={}& \alpha_d + \lambda_t
+\operatorname{HSRate}_{d,t} ={}& \alpha_d + \lambda_t
 + \beta\,\operatorname{PolicyFlowAll}_{d,t-1}
 + \theta_{HS}\,\operatorname{PolicyFlowHS}_{d,t-1} \\
 &+ \theta_{LS}\,\operatorname{PolicyFlowLS}_{d,t-1}
-+ \gamma\,\operatorname{PermitScale}_{d,t-1,g} \\
++ \gamma\,\operatorname{PermitScale}_{d,t-1} \\
 &+ \delta\,\operatorname{Unemployment}_{d,t-1}
 + \varphi\,\operatorname{GDPGrowth}_{d,t-1}
-+ \varepsilon_{d,t,g}.
++ \varepsilon_{d,t}.
 \end{aligned}
 \tag{2}
 \end{equation*}

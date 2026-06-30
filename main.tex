@@ -2,14 +2,23 @@
 \documentclass[11pt,a4paper]{article}
 
 \usepackage[a4paper,top=25.4mm,bottom=25.4mm,left=25.4mm,right=25.4mm,headheight=14pt]{geometry}
-\usepackage{fontspec}
-\usepackage{unicode-math}
-\setmainfont{texgyrepagella-regular.otf}[
-  BoldFont=texgyrepagella-bold.otf,
-  ItalicFont=texgyrepagella-italic.otf,
-  BoldItalicFont=texgyrepagella-bolditalic.otf
-]
-\setmathfont{texgyrepagella-math.otf}
+% Overleaf imports default to pdfLaTeX, while the preferred build uses
+% XeLaTeX. Keep the document compilable with either engine.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{newpxtext,newpxmath}
+\else
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \setmainfont{texgyrepagella-regular.otf}[
+    BoldFont=texgyrepagella-bold.otf,
+    ItalicFont=texgyrepagella-italic.otf,
+    BoldItalicFont=texgyrepagella-bolditalic.otf
+  ]
+  \setmathfont{texgyrepagella-math.otf}
+\fi
 \usepackage{microtype}
 \usepackage{setspace}
 \setstretch{1.5}
@@ -1679,12 +1688,12 @@ findings}\label{interpretation-of-the-significant-and-non-significant-findings}
 The results point to a composition association, not a volume effect. The
 high-skilled share is positively associated with the cumulative net
 policy-change measure in the improved preferred denominator-weighted
-bilateral specification (β = 0.003278, p = 0.006, N = 6,301; bootstrap p
+bilateral specification ($\beta$ = 0.003278, p = 0.006, N = 6,301; bootstrap p
 = 0.028), consistent with the joint prediction stated in Section 3. The
 aggregate all-migrant-worker cumulative and annual-flow models are not
 significant, the total employment-permit denominator is essentially flat
 in both the aggregate and bilateral panels, and the bilateral
-high-skilled permit count is positive in the PPML comparison (β =
+high-skilled permit count is positive in the PPML comparison ($\beta$ =
 0.0199) but not significant at the five-percent level. The evidence
 therefore concerns the relative skill mix of employment-related permits
 rather than a robust increase in the absolute number of high-skilled
@@ -1836,7 +1845,7 @@ an additional five-percent significant result.
 A further aggregate outcome check adds EU Blue Card permits to the
 high-skilled numerator while retaining the skill-target policy controls.
 The resulting coefficient is negative and not statistically significant
-(β = -0.002279, p = 0.367). This result does not provide aggregate
+($\beta$ = -0.002279, p = 0.367). This result does not provide aggregate
 support for the association when the numerator is broadened to include
 Blue Card permits. It remains a secondary check, however, because Blue
 Card coverage is not uniform across the sample and the specification is

@@ -672,10 +672,10 @@ tradition and does not duplicate the dependent
 variable\textquotesingle s denominator. The label is deliberately chosen
 to avoid the mistaken impression that the variable refers to total
 employment in the destination labor market. The preferred bilateral
-model also uses the current permit denominator, EMP, as an estimation
-weight. This is not a second outcome variable. It is a precision
-adjustment: a high-skilled share calculated from 5,000 employment
-permits is less noisy than the same share calculated from 10 permits.
+model separately uses the current permit denominator as an estimation
+weight. PermitScale and the estimation weight serve different purposes;
+their distinction is explained with Specification 3 after the bilateral
+equation is introduced.
 
 \[ \operatorname{PermitScale}_{d,t-1} = \log\!\left(1 + \operatorname{EmploymentPermitFlow}_{d,t-1}\right) \]
 
@@ -816,15 +816,47 @@ low-skilled workers. They enter as controls so that \(\beta\) is
 interpreted as the association of general employment-migration
 restrictiveness with HSRate, holding targeted skill-selective policy
 paths constant. The preferred estimate is obtained by weighted least
-squares with weights w\_odt = EMP\_odt, where EMP\_odt is the total
-number of employment-related permits in the origin-destination-year
-cell. The target parameter is therefore a permit-denominator-weighted
-association rather than an equal-cell association. The design is
-preferred because origin-year fixed effects absorb all shocks that
-affect migrants from the same origin in the same year, including
+squares rather than unweighted ordinary least squares. The distinction
+concerns how much influence each origin-destination-year observation has
+when the coefficients are estimated. Applied to the same fixed-effects
+equation, unweighted OLS chooses the coefficients that minimize the
+unweighted fitting criterion:
+
+\[ Q_{\mathrm{OLS}} = \sum_{o,d,t}\widehat{\varepsilon}_{o,d,t}^{\,2}. \]
+
+Every corridor-year cell therefore contributes equally, whether HSRate
+is calculated from 10 employment permits or 5,000. The preferred
+weighted least-squares estimator instead minimizes:
+
+\[ Q_{\mathrm{WLS}} = \sum_{o,d,t} w_{o,d,t}\widehat{\varepsilon}_{o,d,t}^{\,2},
+\qquad
+w_{o,d,t}=\operatorname{EMP}_{o,d,t}. \]
+
+Here, \(\operatorname{EMP}_{o,d,t}\) is the current total number of
+employment-related permits in the cell. A share based on a larger permit
+denominator is generally measured more precisely, so that cell receives
+more influence than a volatile share calculated from only a few permits.
+The resulting coefficient is a permit-denominator-weighted association,
+whereas unweighted OLS estimates an equal-cell association in which a
+small corridor and a large corridor receive the same influence.
+
+This weight is not another explanatory variable and does not receive an
+estimated coefficient. It changes the objective function used to fit
+Equation (3). By contrast,
+\(\operatorname{PermitScale}_{o,d,t-1}=\log(1+
+\operatorname{EMP}_{o,d,t-1})\) appears on the right-hand side of the
+equation as a lagged control and receives the coefficient \(\gamma\).
+PermitScale adjusts for the association between the corridor's previous
+size and its current HSRate; the weight determines how strongly the
+current cell influences estimation. The two quantities are related to
+permit volume but differ in statistical role, timing, and functional
+form.
+
+The design is preferred because origin-year fixed effects absorb shocks
+that affect migrants from the same origin in the same year, including
 origin-side labor-market conditions and multilateral resistance to
-migration, while the weights account for the fact that the dependent
-share is measured with different precision across cells.
+migration, while weighting reduces the influence of imprecisely measured
+shares from small-denominator cells.
 
 \medskip\noindent\textbf{Specification 4: Bilateral PPML volume model.}
 The final specification addresses the volume side of the question. It

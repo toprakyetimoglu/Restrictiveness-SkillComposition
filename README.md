@@ -6,9 +6,11 @@ references are preserved from the Word source.
 
 ## Compile
 
-The project uses XeLaTeX because the thesis uses an OpenType text and math font.
-Overleaf reads `latexmkrc` automatically, so `main.tex` can be compiled without
-changing the compiler in the project settings.
+`main.tex` is the main document and compiles with Overleaf's default pdfLaTeX
+setting. XeLaTeX remains the preferred compiler because it reproduces the
+OpenType Pagella text and math fonts used in the original conversion. The
+engine-aware preamble selects the closest Pagella-compatible fallback when
+pdfLaTeX is used, so a fresh GitHub import compiles without a settings change.
 
 ## Project structure
 

@@ -92,7 +92,12 @@
 }
 \makesavenoteenv{longtable}
 \newcommand{\TableNote}[1]{%
-  \par\vspace{-0.25em}\noindent
+  \par\vspace{-0.75em}\noindent
+  \begin{minipage}{\linewidth}\footnotesize\setstretch{1.05}\textit{Note:} #1\end{minipage}
+  \par\vspace{0.6em}%
+}
+\newcommand{\LongTableNote}[1]{%
+  \par\vspace{0.1em}\noindent
   \begin{minipage}{\linewidth}\footnotesize\setstretch{1.05}\textit{Note:} #1\end{minipage}
   \par\vspace{0.6em}%
 }
@@ -1568,7 +1573,6 @@ skill-target controls; the preferred test is the bilateral specification
 in Section 7.2.
 
 \Needspace{7\baselineskip}\captionof{table}[Aggregate country-year regression results]{Aggregate country-year regression results. Outcome: high-skilled share, except M4 (log high-skilled permit count).}\label{tab:aggregate-results}
-\TableNote{Significance markers in this and following result tables: *** $p<0.01$, ** $p<0.05$, * $p<0.10$.}
 
 \begin{center}
 \scriptsize
@@ -1614,7 +1618,9 @@ the specification's outcome, lags, controls, and fixed effects are
 jointly available. G denotes the number of destination-country clusters
 used for cluster-robust inference. Both values can therefore differ
 across specifications when additional controls, alternative outcomes, or
-country coverage change the complete-case estimation sample.}
+country coverage change the complete-case estimation sample. Significance
+markers in this and the following result tables are *** $p<0.01$, **
+$p<0.05$, and * $p<0.10$.}
 
 No aggregate country-year result crosses the five-percent significance
 threshold under the current all-migrant-worker policy specification. The
@@ -1871,6 +1877,7 @@ a limited diagnostic rather than a clean untreated comparison group.
 \Needspace{7\baselineskip}\captionof{table}{Robustness, sensitivity, and diagnostic checks.}\label{tab:robustness}
 
 {\def\LTcaptype{none} % do not increment counter
+\setlength{\LTpost}{0pt}
 \begin{longtable}[]{@{}
   L{(\linewidth - 8\tabcolsep) * \real{0.20}}
   L{(\linewidth - 8\tabcolsep) * \real{0.39}}
@@ -1906,7 +1913,7 @@ Long-difference check & Compares first-to-last available changes within 2008--20
 \end{longtable}
 }
 
-\TableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Panel A changes a model,
+\LongTableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Panel A changes a model,
 outcome, sample, data source, or policy definition; Panel B provides falsification
 and long-difference diagnostics. Bilateral and aggregate coefficients are not directly
 comparable because the designs, fixed effects, weighting, outcomes, and
@@ -2674,6 +2681,7 @@ A.2.
 \Needspace{7\baselineskip}\captionof{table}{Aggregate robustness checks and diagnostics for the all-migrant-worker policy specification.}\label{tab:app-diagnostics}
 
 {\def\LTcaptype{none} % do not increment counter
+\setlength{\LTpost}{0pt}
 \begin{longtable}[]{@{}
   L{(\linewidth - 12\tabcolsep) * \real{0.07}}
   L{(\linewidth - 12\tabcolsep) * \real{0.39}}
@@ -2712,6 +2720,6 @@ P4 & EU27 placebo, policy flow & 0.010176* & 0.005247 & 0.076 & 38 & 13 \\
 P5 & First-to-last available endpoint fit within 2008--2020 & -0.007443 & 0.007691 & 0.342 & 31 & -- \\
 \end{longtable}
 }
-\TableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Standard errors are clustered by destination where applicable.}
+\LongTableNote{*** $p<0.01$, ** $p<0.05$, * $p<0.10$. Standard errors are clustered by destination where applicable.}
 
 \end{document}

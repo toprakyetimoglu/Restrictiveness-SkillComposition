@@ -430,8 +430,9 @@ through 2010, and DEMIG-QuantMig records European policy events through
 
 For this thesis, DEMIG-QuantMig is the most suitable source because it
 covers the post-2008 European reform period and retains reform magnitude
-and target-group detail. These features make the Restrict construction
-transparent and aligned with the ratio outcome.
+and target-group detail. These features permit a transparent, signed and
+magnitude-weighted measure of policy restrictiveness that can be
+separated by target group and aligned with the ratio outcome.
 
 The choice is methodological rather than a claim that other databases
 are inferior for every purpose: IMPIC is valuable for structured
@@ -473,9 +474,9 @@ The thesis closes this gap through five contributions. First, the data
 linkage of Eurostat first-residence-permit statistics with
 DEMIG-QuantMig events closes the data gap, allowing yearly
 skill-composition outcomes to be matched to dated policy reforms.
-Second, the signed, magnitude-weighted Restrict measure closes the
-measurement gap left by binary policy coding, preserving reform-size
-information. Third, the separation of all-migrant-worker reforms from
+Second, the signed, magnitude-weighted policy measure closes the
+measurement gap left by binary policy coding by preserving the direction
+and size of each reform. Third, the separation of all-migrant-worker reforms from
 skilled/high-skilled and low-skilled target-group reforms closes the
 alignment gap between the policy regressor and the ratio outcome.
 Fourth, the denominator-weighted bilateral origin-destination-year model
@@ -708,9 +709,9 @@ low-skilled target-group policy paths enter as controls:
 \begin{equation*}
 \begin{aligned}
 \operatorname{HSRate}_{d,t} ={}& \alpha_d + \lambda_t
-+ \beta\,\operatorname{RestrictAll}_{d,t-1}
-+ \theta_{HS}\,\operatorname{RestrictHS}_{d,t-1} \\
-&+ \theta_{LS}\,\operatorname{RestrictLS}_{d,t-1}
++ \beta\,\operatorname{CumPolicyAll}_{d,t-1}
++ \theta_{HS}\,\operatorname{CumPolicyHS}_{d,t-1} \\
+&+ \theta_{LS}\,\operatorname{CumPolicyLS}_{d,t-1}
 + \gamma\,\operatorname{PermitScale}_{d,t-1} \\
 &+ \delta\,\operatorname{Unemployment}_{d,t-1}
 + \varphi\,\operatorname{GDPGrowth}_{d,t-1}
@@ -726,9 +727,9 @@ not retain individual-origin resolution: non-EU origins are collapsed
 into one Non-EU total. Equation (3), introduced later in this section,
 instead retains individual origins and indexes them by o. Destination
 fixed effects are represented by alpha, year fixed effects by lambda,
-and the coefficient of interest is beta on RestrictAll, the lagged
+and the coefficient of interest is beta on CumPolicyAll, the lagged
 cumulative net policy-change score for all-migrant-worker reforms.
-RestrictHS and RestrictLS are included as policy controls because they
+CumPolicyHS and CumPolicyLS are included as policy controls because they
 capture reforms that directly target the high-skilled numerator or the
 lower-skilled part of the denominator. PermitScale controls for the size
 of the permit denominator from which the high-skilled share is
@@ -804,9 +805,9 @@ small-denominator permit cells.
 \begin{equation*}
 \begin{aligned}
 \operatorname{HSRate}_{o,d,t} ={}& \alpha_d + \mu_{o,t}
-+ \beta\,\operatorname{RestrictAll}_{d,t-1}
-+ \theta_{HS}\,\operatorname{RestrictHS}_{d,t-1} \\
-&+ \theta_{LS}\,\operatorname{RestrictLS}_{d,t-1}
++ \beta\,\operatorname{CumPolicyAll}_{d,t-1}
++ \theta_{HS}\,\operatorname{CumPolicyHS}_{d,t-1} \\
+&+ \theta_{LS}\,\operatorname{CumPolicyLS}_{d,t-1}
 + \gamma\,\operatorname{PermitScale}_{o,d,t-1} \\
 &+ \delta\,\operatorname{Unemployment}_{d,t-1}
 + \varphi\,\operatorname{GDPGrowth}_{d,t-1}
@@ -816,9 +817,9 @@ small-denominator permit cells.
 \end{equation*}
 
 In Equation (3), o indexes origin countries and mu represents
-origin-year fixed effects. \mbox{RestrictAll} is the cumulative net
+origin-year fixed effects. \mbox{CumPolicyAll} is the cumulative net
 policy-change score for all-migrant-worker reforms and remains the
-coefficient of interest. RestrictHS and RestrictLS are parallel
+coefficient of interest. CumPolicyHS and CumPolicyLS are parallel
 cumulative scores for reforms targeting skilled/high-skilled workers and
 low-skilled workers. They enter as controls so that \(\beta\) is
 interpreted as the association of general employment-migration
@@ -871,21 +872,24 @@ The final specification addresses the volume side of the question. It
 applies Poisson Pseudo-Maximum-Likelihood (PPML) to the same bilateral
 panel, following Santos Silva and Tenreyro (2006):
 
+\begingroup\small
 \begin{equation*}
 \begin{aligned}
 \operatorname{E}\!\left[Y_{o,d,t}\mid X_{o,d,t}\right] =
-\exp\!\big(&\alpha_d + \mu_{o,t}
-+ \beta\,\operatorname{RestrictAll}_{d,t-1}
-+ \theta_{HS}\,\operatorname{RestrictHS}_{d,t-1} \\
-&+ \theta_{LS}\,\operatorname{RestrictLS}_{d,t-1}
+\exp\!\big(&\alpha_d + \mu_{o,t} \\
+&+ \beta\,\operatorname{CumPolicyAll}_{d,t-1}
++ \theta_{HS}\,\operatorname{CumPolicyHS}_{d,t-1} \\
+&+ \theta_{LS}\,\operatorname{CumPolicyLS}_{d,t-1}
 + \delta\,\operatorname{Unemployment}_{d,t-1}
 + \varphi\,\operatorname{GDPGrowth}_{d,t-1}\big).
 \end{aligned}
 \tag{4}
 \end{equation*}
+\endgroup
 
 Equation (4) is estimated twice. First, \(Y_{o,d,t}\) is HSNumber, which
-tests whether Restrict is associated with the absolute number of
+tests whether the lagged cumulative all-migrant-worker policy score is
+associated with the absolute number of
 high-skilled permits. Second, \(Y_{o,d,t}\) is the total
 employment-permit count, which tests whether the denominator of HSRate
 changes. Both PPML models include the all-migrant-worker policy measure,
@@ -895,7 +899,7 @@ fixed effects. Standard errors are clustered by destination. Unlike the
 share specifications, Equation (4) does not include PermitScale or
 denominator weights: it models the permit count itself rather than the
 precision of a calculated share. The exact percentage change associated
-with a one-unit increase in Restrict is
+with a one-unit increase in that cumulative score is
 \(100[\exp(\beta)-1]\), which is approximately \(100\beta\) for a small
 coefficient. PPML retains zero-count cells and avoids the log-of-zero
 problem that would affect an OLS-on-log specification.
@@ -927,7 +931,8 @@ under common EU labor-migration directives. Origin-year fixed effects
 absorb the component of an EU-level shock that is common to every
 sampled destination for a given origin and year. They do not by
 themselves absorb differences created by non-EU destinations, national
-opt-outs, or Croatia's 2013 accession. The Restrict coefficient is
+opt-outs, or Croatia's 2013 accession. The cumulative all-migrant-worker
+policy-score coefficient is
 identified from differential national policy variation within each
 origin-year, and Robustness 6 additionally controls for the directive
 windows that applied to participating destinations.
@@ -1067,10 +1072,11 @@ policy field, the instrument affected, the migrant group targeted,
 whether the reform made policy more or less restrictive, and how large
 the change was. This structure makes it possible to build a country-year
 measure of policy tightening or liberalization that can be matched to
-Eurostat\textquotesingle s annual permit-flow outcomes. The Restrict
-policy-change measure used in this thesis multiplies the signed
-direction of each event by its magnitude weight, giving fine-tuning
-reforms a weight of one and major reforms a weight of four.
+Eurostat\textquotesingle s annual permit-flow outcomes. The resulting
+country-year policy measure is denoted Restrict. It is constructed by
+multiplying the signed direction of each event by its magnitude weight,
+giving fine-tuning reforms a weight of one and major reforms a weight of
+four.
 
 The construction proceeds in four steps. First, only events between 2007
 and 2020 in the policy area Legal entry and stay are retained, because
@@ -1124,9 +1130,9 @@ destination-year:
 
 \[ \operatorname{flow}_{d,t} = \sum_{i \in E(d,t)} e_i \]
 
-The cumulative net policy-change score, denoted Restrict, is the running
-country-year sum of the annual policy-flow scores from the 2007 baseline
-through year t. Although permit outcomes are observed from 2008 to 2020,
+The cumulative version of Restrict is the running country-year sum of
+the annual policy-flow scores from the 2007 baseline through year t.
+Although permit outcomes are observed from 2008 to 2020,
 the policy-score panel begins in 2007. This extra year establishes the
 one-year policy lag for the first observed outcome year. The cumulative
 score is initialized at zero before 2007. The fully controlled aggregate
@@ -1147,7 +1153,7 @@ net liberalizing. A value of zero corresponds to either no change since
 the baseline or restrictive and liberalizing changes that exactly offset
 each other in magnitude-weighted terms.
 
-\Needspace{7\baselineskip}\captionof{table}{Construction of the Restrict policy-change measure, step by step.}\label{tab:construction}
+\Needspace{7\baselineskip}\captionof{table}{Construction of the cumulative net policy-change measure, step by step.}\label{tab:construction}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -1281,7 +1287,7 @@ stay reforms in DEMIG-QuantMig. The core labor-entry robustness check
 later narrows this broader all-tools measure by excluding categories
 that do not directly govern employer-permit admission.
 
-\Needspace{7\baselineskip}\captionof{table}{Preferred all-migrant-worker Restrict measure by policy tool.}\label{tab:tools}
+\Needspace{7\baselineskip}\captionof{table}{Preferred all-migrant-worker cumulative policy measure by policy tool.}\label{tab:tools}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}

@@ -777,7 +777,7 @@ unweighted fitting criterion:
 \[ Q_{\mathrm{OLS}} = \sum_{o,d,t}\widehat{\varepsilon}_{o,d,t}^{\,2}. \]
 
 Every corridor-year cell therefore contributes equally, whether HSRate
-is calculated from 10 employment permits or 5,000. The preferred
+is calculated from 30 employment permits or 5,000. The preferred
 weighted least-squares estimator instead minimizes:
 
 \[ Q_{\mathrm{WLS}} = \sum_{o,d,t} w_{o,d,t}\widehat{\varepsilon}_{o,d,t}^{\,2},
@@ -956,8 +956,19 @@ showing that the exclusion strengthens but does not create the result.
 The main outcome is built from the employment-related permit categories.
 The denominator is the broad employment-permit category, while the
 high-skilled numerator combines permits issued to highly skilled workers
-and researchers. EU Blue Card permits are not included in the main high-skilled numerator. They
-are examined separately in the permit-category diagnostic in Section 7.3.
+and researchers. EU Blue Card permits are not included in the main
+high-skilled numerator, for two reasons. First, the Blue Card is an
+EU-level channel with common legal foundations but uneven national
+implementation and participation, so it is not governed by the national
+policy changes that identify the models in the same way as national
+permit routes are. Second, the scheme only begins issuing permits in
+2011--2012 and does not operate in all sample destinations, including
+the United Kingdom, Denmark, Ireland, and the non-EU EEA countries, so
+adding it would build a mechanical post-2012 break into the outcome
+series. Blue Card counts are instead examined separately in the
+permit-category diagnostic in Section 7.3, and the timing of the Blue
+Card and related directives is controlled for directly in the EU
+directive-window check.
 
 In this thesis, "employment" refers to Eurostat's reason category for first
 permits issued for employment or remunerated activities. It does not mean
@@ -2079,7 +2090,8 @@ evidence is therefore systematic but model dependent.
 
 The supporting PPML model also returns a positive, statistically
 significant association with the measured high-skilled permit count,
-while the total employment-permit count remains statistically unchanged.
+while the total employment-permit count does not show a statistically
+detectable change.
 The pattern therefore combines a compositional shift with a higher
 measured administrative count in the retained corridors. Reallocation
 between permit categories is one possible explanation, but the aggregate
@@ -2241,9 +2253,9 @@ the bilateral model accounts for origin-year pressures,
 permit-denominator weighting, and targeted high- and low-skill policy
 paths. The supporting PPML model also finds a positive association with
 the measured high-skilled permit count, while the total employment-permit
-count remains statistically unchanged. This pattern is compatible with,
-but does not establish, reallocation into dedicated high-skilled
-categories. Future work should extend the panel beyond the pandemic endpoint, add
+count does not show a statistically detectable change. This pattern is
+compatible with, but does not establish, reallocation into dedicated
+high-skilled categories. Future work should extend the panel beyond the pandemic endpoint, add
 harmonized bilateral controls such as migrant networks and wage
 differentials, and use reform-specific designs in which individual policy
 changes generate sharper causal variation.

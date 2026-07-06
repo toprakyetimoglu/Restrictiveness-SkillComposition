@@ -352,15 +352,6 @@ For transparency, Table 6 introduces the aggregate controls progressively. M0 co
 
 In Equation (3), o indexes origin countries and \(\mu_{o,t}\) represents origin-year fixed effects. Restrict is the cumulative net policy-change score for all-migrant-worker reforms targeting All foreign nationalities and remains the coefficient of interest. RestrictHS and RestrictLS are parallel cumulative scores for reforms targeting skilled/high-skilled workers and low-skilled workers. They enter as controls so that \(\beta\) is interpreted as the association of general employment-migration restrictiveness with HSRate, holding targeted skill-selective policy paths constant. The preferred estimate is obtained by weighted least squares (WLS) rather than unweighted ordinary least squares (OLS). Both estimators fit Equation (3) by making the model's prediction errors as small as possible; they differ only in how much influence each origin-destination-year cell has on that fit.
 
-\[
-Q_{\mathrm{OLS}}=\sum_{o,d,t}\widehat{\varepsilon}_{o,d,t}^{\,2}
-\]
-
-\[
-Q_{\mathrm{WLS}}=\sum_{o,d,t}w_{o,d,t}\widehat{\varepsilon}_{o,d,t}^{\,2},\qquad
-w_{o,d,t}=\operatorname{EMP}_{o,d,t}
-\]
-
 Unweighted OLS treats every cell as equally informative: a corridor whose HSRate is computed from 30 employment permits counts exactly as much as one computed from 5,000. Shares built from a handful of permits are volatile, because a single differently classified permit can move HSRate by several percentage points, while shares built from thousands of permits are measured precisely. WLS therefore lets each cell count in proportion to its current employment-permit denominator, in the same way that a weighted average lets larger groups contribute more than smaller ones. Precisely measured shares anchor the estimate, and noisy shares from small cells are down-weighted. This weight is not an explanatory variable and receives no coefficient; it only determines how strongly each cell influences the estimation. The resulting coefficient is therefore a permit-denominator-weighted association, whereas unweighted OLS estimates an equal-cell association.
 
 PermitScale is a control variable inside Equation (3). It is the log of one plus the corridor's employment-permit flow in the previous year and receives its own coefficient. It is included because larger corridors may systematically differ in skill composition, and corridor size may itself move with policy, so the model holds each corridor's lagged scale constant when estimating the policy coefficient. The previous year's flow is used because the current flow is the denominator of HSRate itself and can be affected by the same policies; the lagged value captures corridor size without reusing the current denominator.
@@ -438,7 +429,7 @@ These two target-group measures are included to avoid mixing the main policy cha
 
 The remaining two steps translate retained events into a numerical score. Each event is converted into a signed magnitude, where direction is coded as More restrictive = +1, Less restrictive = -1, and No change = 0, and where magnitude is coded as Fine-tuning = 1, Minor = 2, Mid-level = 3, and Major = 4. Events with N/A magnitude are retained with weight 1, so that an assessable restrictiveness change is not dropped only because its size is not separately graded. Finally, the event score is the product of direction and magnitude, annual policy-flow scores are summed within each country-year, and the cumulative net policy-change score is the running country-year sum of those annual scores.
 
-Formally, let i index a recorded DEMIG-QuantMig event with assigned restrictiveness-direction code in \{+1, 0, -1\}, where +1 = More restrictive, 0 = No change, and -1 = Less restrictive, and magnitude weight in \{1, 2, 3, 4\}. The signed event score, denoted \(e_i\), is the product of direction and magnitude. Thus, \(i\) identifies the event, while \(e_i\) is its numerical score:
+Formally, let i index a recorded DEMIG-QuantMig event with assigned restrictiveness-direction code \(r_i\) in \{+1, 0, -1\}, where +1 = More restrictive, 0 = No change, and -1 = Less restrictive, and magnitude weight \(m_i\) in \{1, 2, 3, 4\}. The signed event score, denoted \(e_i\), is the product of direction and magnitude. Thus, \(i\) identifies the event, while \(e_i\) is its numerical score:
 
 \textbf{Magnitude weight assignment used to build the Restrict measure:}
 

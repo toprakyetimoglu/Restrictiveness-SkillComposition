@@ -14,7 +14,7 @@
   \usepackage{unicode-math}
   \setmainfont{texgyrepagella-regular.otf}[
     BoldFont=texgyrepagella-bold.otf,
-    ItalicFont=texgyrepagella-italic.otf, 
+    ItalicFont=texgyrepagella-italic.otf,
     BoldItalicFont=texgyrepagella-bolditalic.otf
   ]
   \setmathfont{texgyrepagella-math.otf}
@@ -859,13 +859,13 @@ This interpretation is also consistent with the contrast between aggregate and b
 
 \section{8. Robustness, Sensitivity, and Diagnostic Checks}\label{robustness-sensitivity-and-diagnostic-checks}
 
-Section 8 brings the robustness, sensitivity, and diagnostic evidence together in Table 9. Panel A modifies the preferred denominator-weighted bilateral model, while Panel B reports two aggregate EU27 placebo comparisons; unless noted otherwise, each Panel A check re-estimates the full preferred specification. Because the panels answer different questions, their coefficients should not be read as estimates from one common model.
+Section 8 separates robustness checks from placebo diagnostics. Section 8.1 reports changes to the preferred bilateral model, while Section 8.2 reports the aggregate benchmark and EU27 placebo diagnostics. The two sets of estimates answer different questions and should not be read as one common model.
+
+\subsection{8.1 Robustness and Sensitivity Checks}
 
 The overall pattern is mixed but informative. The preferred result survives reintroducing 2020, removing the minimum-cell cutoff, using the all-first-permits denominator, replacing unemployment with no-UK ILOSTAT data, narrowing the policy measure to core labor-entry or work-visa tools, using prior-year weights, and adding EU-directive windows. The origin-income estimates remain heterogeneous, the UK-inclusive model and aggregate placebo coefficients are not significant, and destination-specific trends substantially weaken the estimate. Every leave-one-destination-out coefficient remains positive and significant at five percent.
 
-Within Panel B, the EU27 placebo is an aggregate diagnostic. It sums permit counts across the fixed EU27-2020 citizenship composition, excluding the reporting destination's own citizenship, and rebuilds HSNumber, HSRate, and PermitScale from those flows. The cumulative and annual-flow specifications reuse the policy variables, controls, and fixed effects of their Non-EU counterparts. Because EU citizens generally enter under free-movement rights rather than the national rules measured by Restrict, the expected coefficient is close to zero. Sparse and selective EU permit reporting, accession timing, and transitional restrictions nevertheless make this a limited diagnostic rather than a clean untreated group.
-
-\Needspace{7\baselineskip}\captionof{table}{Robustness, sensitivity, and diagnostic checks.}\label{tab:robustness}
+\Needspace{7\baselineskip}\captionof{table}{Robustness and sensitivity checks for the preferred bilateral model.}\label{tab:robustness}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -890,7 +890,6 @@ Within Panel B, the EU27 placebo is an aggregate diagnostic. It sums permit coun
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\emph{Panel A. Robustness and sensitivity checks} & & & & \\
 Bilateral: include 2020 pandemic year & Extends the baseline outcome window from 2008--2019 to 2008--2020 & 0.005446*** & 0.004 & Significant; bootstrap p = 0.024 \\
 Bilateral: no minimum-cell cutoff & Retains every positive employment-permit denominator & 0.005978*** & $<0.001$ & Significant; not created by cutoff \\
 Bilateral: all-first-permits denominator & Replaces the employment-permit denominator with all first residence permits & 0.000958*** & 0.004 & Significant; survives broader denominator \\
@@ -902,15 +901,10 @@ Bilateral: origin-income strata & Re-estimates the preferred model by World Bank
 Bilateral: EU directive windows & Adds four destination-year directive-window controls where legally applicable & 0.006587*** & $<0.001$ & Preferred coefficient remains stable \\
 Bilateral: prior-year denominator weights & Replaces the current-year precision weight with the previous year's employment-permit denominator & 0.006858*** & $<0.001$ & Significant; bootstrap p = 0.0025 \\
 Bilateral: leave-one-destination-out & Re-estimates the preferred model omitting each of the 30 destinations in turn & 0.0039 to 0.0073 & See text & Positive and significant in all 30 runs \\
-\emph{Panel B. Aggregate EU27 placebo diagnostics} & & & & \\
-Non-EU group, cumulative score & Aggregate treated-group benchmark & 0.002296 & 0.243 & Not significant (N=280; G=30) \\
-EU27 placebo, cumulative score & Applies the aggregate model to the fixed EU27-2020 citizenship group & 0.021964 & 0.217 & Not significant; small sample (N=38; G=13) \\
-Non-EU group, annual policy flow & Tests newly adopted policy changes against the following year's outcome & 0.000796 & 0.736 & Not significant (N=280; G=30) \\
-EU27 placebo, annual policy flow & Repeats the annual-flow test for the fixed EU27-2020 citizenship group & 0.003328 & 0.720 & Not significant; small sample (N=38; G=13) \\
 \end{longtable}
 }
 
-\TableNote{*** \(p<0.01\), ** \(p<0.05\), * \(p<0.10\). Panel A changes a model, outcome, sample, data source, or policy definition within the preferred bilateral framework; Panel B provides limited aggregate falsification diagnostics. Bilateral and aggregate coefficients are not directly comparable because the designs, fixed effects, weighting, outcomes, and samples differ. The preferred result remains the denominator-weighted bilateral HSRate specification in Table 7.}
+\TableNote{*** \(p<0.01\), ** \(p<0.05\), * \(p<0.10\). Rows modify the preferred bilateral HSRate framework by changing the sample, outcome denominator, control source, policy definition, weighting, or inference. Coefficients are not always directly comparable because some checks change samples, weights, or definitions. The preferred result remains the bilateral HSRate specification in Table 7, estimated with denominator weights.}
 
 The first check reintroduces the pandemic year. Extending the window to 2008--2020 reduces the coefficient from 0.006516 to 0.005446, still positive and significant (SE = 0.001716, p = 0.004, N = 6,301; wild-cluster bootstrap p = 0.024). Excluding 2020 therefore strengthens the baseline estimate but does not create its sign or significance.
 
@@ -923,12 +917,6 @@ Robustness 1 changes the denominator. The numerator keeps highly skilled worker 
 The result is therefore not only a mechanical feature of the employment-permit denominator. This remains a secondary check, however, because the broader denominator includes family, education, and other permit channels that labor-migration policy does not directly target.
 
 Robustness 2 asks whether the result depends on the exact tool set behind Restrict. The core labor-entry subset keeps only the tools that directly affect the employer-permit entry decision - work visa/permit rules, quota/target, entry visa/stay permit, employer liabilities, and related sanctions -- and drops action plans, integration programs, and general access-to-rights categories, which belong to the Legal entry and stay area but do not govern admission under the general channel. With the skill-target controls, the core-subset estimate remains significant (\(\beta = 0.004389\), p = 0.015), so the result is not confined to the all-tools definition, although the subset still combines several distinct instruments.
-
-Panel B of Table 9 contains the aggregate EU27 placebo diagnostics. They do not test the robustness of the preferred bilateral estimator. Instead, they ask whether the aggregate policy association also appears for a group that is less directly exposed to national labor-migration rules.
-
-The cumulative EU27 placebo is positive but insignificant (0.021964, p = 0.217); its Non-EU counterpart is also small and imprecise (M3: 0.002296, p = 0.243). With only 38 observations and 13 clusters, the placebo is too imprecise to establish an alternative explanation, and the fixed EU27-2020 composition spans Croatia's accession and transitional restrictions, so it is not a clean untreated group. It does not validate the preferred bilateral estimate, but it also does not reproduce a significant aggregate association for the less-exposed group.
-
-The annual-flow EU27 placebo is likewise insignificant (\(\beta = 0.003328\), p = 0.720) on the same 38 observations and 13 clusters, so both EU27 results are treated as limited diagnostics. A bilateral EU27 placebo, the closest mirror of the preferred design, is not run because EU free movers generally do not require the permits measured by migr\_resocc; the EU citizenship rows in the raw extract are too sparse and selective to form a comparable bilateral outcome.
 
 Robustness 3 replaces Eurostat unemployment with World Bank indicator SL.UEM.TOTL.ZS, the modeled ILO estimate (World Bank 2026), in no-UK and UK-inclusive variants. The main sample excludes the United Kingdom because the Eurostat control extract contains no UK unemployment for the estimation window, and Brexit is not fully represented as a single change in the cumulative score.
 
@@ -951,6 +939,50 @@ A single combined applicable-window indicator gives \(\beta = 0.006518\) (SE = 0
 A prior-year-weight check addresses the concern that the current denominator may respond to the same policy environment. Weighting by the previous year's denominator leaves the estimate essentially unchanged and slightly more precise (\(\beta = 0.006858\), SE = 0.001502, \(p<0.001\); wild-cluster bootstrap p = 0.0025, N = 5,540). Same-period weighting therefore does not create the result, although the lagged denominator can still reflect earlier policy history.
 
 A leave-one-destination-out check omits each of the 30 destinations in turn. The coefficient stays positive and significant at five percent in all 30 runs, ranging from 0.0039 to 0.0073; the most influential omission, France, gives \(\beta = 0.003884\) (p = 0.029). No single destination drives the sign or significance of the baseline result.
+
+\subsection{8.2 Aggregate Benchmark and EU27 Placebo Diagnostics}
+
+Table 10 separates the aggregate benchmark and EU27 placebo diagnostics from the bilateral robustness checks. The Non-EU rows are not placebo tests; they show the same aggregate specification for the migrant group used in the main analysis. The EU27 rows repeat the comparison for EU citizens, who are less directly exposed to national labor-migration rules because they generally move under free-movement rights.
+
+\Needspace{7\baselineskip}\captionof{table}{Aggregate benchmark and EU27 placebo diagnostics.}\label{tab:placebo}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1923}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3769}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1108}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0738}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2462}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Design / check}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Change relative to the reference model}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{\(\beta\)}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{p}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Inference}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Non-EU group, cumulative score & Aggregate treated-group benchmark & 0.002296 & 0.243 & Not significant (N=280; G=30) \\
+EU27 placebo, cumulative score & Applies the aggregate model to the fixed EU27-2020 citizenship group & 0.021964 & 0.217 & Not significant; small sample (N=38; G=13) \\
+Non-EU group, annual policy flow & Tests newly adopted policy changes against the following year's outcome & 0.000796 & 0.736 & Not significant (N=280; G=30) \\
+EU27 placebo, annual policy flow & Repeats the annual-flow test for the fixed EU27-2020 citizenship group & 0.003328 & 0.720 & Not significant; small sample (N=38; G=13) \\
+\end{longtable}
+}
+
+\TableNote{*** \(p<0.01\), ** \(p<0.05\), * \(p<0.10\). The Non-EU rows are aggregate benchmark counterparts for the main migrant group; the EU27 rows are limited placebo diagnostics. Bilateral and aggregate coefficients are not directly comparable because the designs, fixed effects, weighting, outcomes, and samples differ.}
+
+The EU27 placebo rows in Table 10 are aggregate diagnostics. They sum permit counts across the fixed EU27-2020 citizenship composition, excluding the reporting destination's own citizenship, and rebuild HSNumber, HSRate, and PermitScale from those flows. The cumulative and annual-flow specifications reuse the policy variables, controls, and fixed effects of their Non-EU benchmark counterparts. Because EU citizens generally enter under free-movement rights rather than the national rules measured by Restrict, the expected coefficient is close to zero. Sparse and selective EU permit reporting, accession timing, and transitional restrictions nevertheless make this a limited diagnostic rather than a clean untreated group.
+
+The cumulative EU27 placebo is positive but insignificant (0.021964, p = 0.217); the Non-EU aggregate benchmark in Table 10 is also small and imprecise (\(\beta = 0.002296\), p = 0.243). With only 38 observations and 13 clusters, the placebo is too imprecise to establish an alternative explanation, and the fixed EU27-2020 composition spans Croatia's accession and transitional restrictions, so it is not a clean untreated group. It does not validate the preferred bilateral estimate, but it also does not reproduce a significant aggregate association for the less-exposed group.
+
+The annual-flow EU27 placebo is likewise insignificant (\(\beta = 0.003328\), p = 0.720) on the same 38 observations and 13 clusters, so both EU27 rows in Table 10 are treated as limited diagnostics. A bilateral EU27 placebo, the closest mirror of the preferred design, is not run because EU free movers generally do not require the permits measured by migr\_resocc; the EU citizenship rows in the raw extract are too sparse and selective to form a comparable bilateral outcome.
 
 Graph 2 summarizes the main estimates, robustness checks, and placebo diagnostics; bars show 95-percent confidence intervals and the dashed line marks zero.
 

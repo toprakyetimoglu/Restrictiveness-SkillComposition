@@ -1,24 +1,21 @@
-# Toprak Thesis v14 - Overleaf
+# Toprak Thesis v20 - Overleaf
 
-This repository is the Overleaf-ready LaTeX edition of `Toprak Thesis v14.docx`.
-The thesis text, equations, reported results, table values, graph captions, and
-references are preserved from the Word source.
+This repository is the Overleaf-ready LaTeX edition of `Toprak Thesis v20.docx`.
+Version 20 is the sole source of truth for the thesis text, equations, reported
+results, table values, graph captions, appendix, and references.
 
 ## Compile
 
-`main.tex` is the main document and compiles with Overleaf's default pdfLaTeX
-setting. XeLaTeX remains the preferred compiler because it reproduces the
-OpenType Pagella text and math fonts used in the original conversion. The
-engine-aware preamble selects the closest Pagella-compatible fallback when
-pdfLaTeX is used, so a fresh GitHub import compiles without a settings change.
+`main.tex` is the main document. The included `latexmkrc` selects XeLaTeX,
+which is the preferred Overleaf compiler for the Pagella text and math fonts.
 
 ## Project structure
 
-- `main.tex`: complete thesis source and the Overleaf main document.
-- `figures/`: vector PDF graphs regenerated from the current R outputs, plus the
-  University of Amsterdam logo used on the title page.
+- `main.tex`: complete thesis source and Overleaf main document.
+- `figures/`: vector PDF graphs generated from the thesis R outputs, plus the
+  University of Amsterdam logo.
+- `source/Toprak Thesis v20.docx`: canonical Word source used for this rebuild.
 - `latexmkrc`: reproducible XeLaTeX build configuration.
 
-Tables are native LaTeX `booktabs`/`longtable` tables rather than screenshots or
-Word grid tables. Graphs are vector PDF exports generated from the same R scripts
-and result files used for the Word thesis.
+Tables are native LaTeX `booktabs`/`longtable` tables rather than screenshots.
+Graphs use vector PDFs that match the images embedded in version 20.

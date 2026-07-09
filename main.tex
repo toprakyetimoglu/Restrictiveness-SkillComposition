@@ -894,7 +894,7 @@ This interpretation is also consistent with the contrast between aggregate and b
 \clearpage
 \section{8. Robustness, Sensitivity, and Diagnostic Checks}\label{robustness-sensitivity-and-diagnostic-checks}
 
-Section 8 separates robustness checks from placebo diagnostics. Section 8.1 reports changes to the preferred bilateral model, while Section 8.2 reports the aggregate benchmark and EU27 placebo diagnostics. The two sets of estimates answer different questions and should not be read as one common model.
+Section 8 separates robustness checks from placebo diagnostics. Section 8.1 modifies the preferred bilateral model, while Section 8.2 reports aggregate benchmark and EU27 placebo diagnostics; these estimates answer different questions and should not be read as one common model.
 
 \subsection{8.1 Robustness and Sensitivity Checks}\label{robustness-and-sensitivity-checks}
 
@@ -907,16 +907,16 @@ Section 8 separates robustness checks from placebo diagnostics. Section 8.1 repo
 {
 \LongTableCounterGuard
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1923}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3770}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1108}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0738}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2462}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1900}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1100}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3000}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Design / check}
+\textbf{Check}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\textbf{Change relative to the reference model}
+\textbf{Change}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \textbf{\(\beta\)}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -928,18 +928,18 @@ Section 8 separates robustness checks from placebo diagnostics. Section 8.1 repo
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-R1. Bilateral: include 2020 pandemic year & Extends the baseline outcome window from 2008-2019 to 2008-2020 & 0.005446*** & 0.004 & Significant; bootstrap p = 0.024 \\
-R2. Bilateral: no minimum-cell cutoff & Retains every positive employment-permit denominator & 0.005978*** & \textless0.001 & Significant; not created by cutoff \\
-R3. Bilateral: all-first-permits denominator & Replaces the employment-permit denominator with all first residence permits & 0.000958*** & 0.004 & Significant; survives broader denominator \\
-R4. Bilateral: ILOSTAT, no UK & Replaces Eurostat unemployment with ILOSTAT & 0.005547*** & \textless0.001 & Significant; survives source change \\
-R5. Bilateral: ILOSTAT, with UK & Adds the United Kingdom using ILOSTAT unemployment & 0.000883 & 0.774 & Not significant \\
-R6. Bilateral: core labor-entry measure & Restricts the policy index to core labor-entry and administrative tools & 0.004389** & 0.015 & Positive and significant \\
-R7. Bilateral: work-visa tool only & Restricts the policy index to work-visa and work-permit events & 0.008190*** & \textless0.001 & Significant; larger estimate \\
-R8. Bilateral: origin-income strata & Re-estimates the preferred model by World Bank FY2020 origin-income group & See text & See text & Positive and significant for H/UM/LM; low-income estimate is negative and marginal \\
-R9. Bilateral: EU directive windows & Adds four destination-year directive-window controls where legally applicable & 0.006587*** & \textless0.001 & Preferred coefficient remains stable \\
-R10. Bilateral: prior-year denominator weights & Replaces the current-year precision weight with the previous year\textquotesingle s employment-permit denominator & 0.006858*** & \textless0.001 & Significant; bootstrap p = 0.0025 \\
-R11. Bilateral: leave-one-destination-out & Re-estimates the preferred model omitting each of the 30 destinations in turn & 0.0039 to 0.0073 & See text & Positive and significant in all 30 runs \\
-R12. Bilateral: destination-specific linear trends & Adds destination-specific linear time trends to the preferred bilateral model & 0.002488 & 0.198 & Not significant; estimate attenuates and loses significance \\
+R1. 2020 included & Adds 2020 outcome & 0.005446*** & 0.004 & Significant; bootstrap p = 0.024 \\
+R2. No cutoff & Keeps all positive employment-permit cells & 0.005978*** & \textless0.001 & Significant; not created by cutoff \\
+R3. All first permits & Uses all first residence permits as denominator & 0.000958*** & 0.004 & Significant; survives broader denominator \\
+R4. ILOSTAT no UK & Uses ILOSTAT unemployment, no UK & 0.005547*** & \textless0.001 & Significant; survives source change \\
+R5. ILOSTAT with UK & Adds UK with ILOSTAT unemployment & 0.000883 & 0.774 & Not significant \\
+R6. Core labor entry & Keeps core labor-entry/admin tools & 0.004389** & 0.015 & Positive and significant \\
+R7. Work visa/permit & Keeps work-visa/work-permit events & 0.008190*** & \textless0.001 & Significant; larger estimate \\
+R8. Origin income & Splits by World Bank FY2020 origin-income group & See text & See text & Positive for H/UM/LM; low-income negative and marginal \\
+R9. EU directive windows & Adds applicable EU directive-window controls & 0.006587*** & \textless0.001 & Preferred coefficient remains stable \\
+R10. Lagged weights & Uses previous-year employment-permit denominator as weight & 0.006858*** & \textless0.001 & Significant; bootstrap p = 0.0025 \\
+R11. Drop one destination & Drops each destination in turn & 0.0039 to 0.0073 & See text & Positive and significant in all 30 runs \\
+R12. Destination trends & Adds destination-specific linear trends & 0.002488 & 0.198 & Not significant; estimate attenuates and loses significance \\
 \end{longtable}
 }
 

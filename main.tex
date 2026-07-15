@@ -534,9 +534,10 @@ issued for remunerated activities in an origin-destination-year cell. In
 the aggregate models, these flows are summed across the retained Non-EU
 origins for each destination-year.
 
-\[{HSNumber}_{d,t} = {HighSkilledWorkerPermits}_{d,t} + {ResearcherPermits}_{d,t}\]
-
-\[{HSRate}_{d,t} = \frac{{HSNumber}_{d,t}}{{EmploymentPermitFlow}_{d,t}}\]
+\[\begin{gathered}
+{HSNumber}_{d,t} = {HighSkilledWorkerPermits}_{d,t} + {ResearcherPermits}_{d,t} \\
+{HSRate}_{d,t} = \frac{{HSNumber}_{d,t}}{{EmploymentPermitFlow}_{d,t}}
+\end{gathered}\]
 
 PermitScale is the logged one-year lag of all employment-related first
 residence permits in the relevant cell: destination-year in the
@@ -551,6 +552,7 @@ as explained after Equation (3).
 
 \[{PermitScale}_{d,t - 1} = log\left( 1 + {EmploymentPermitFlow}_{d,t - 1} \right)\]
 
+\clearpage
 \subsection{5.2 Regression
 specifications}\label{regression-specifications}
 

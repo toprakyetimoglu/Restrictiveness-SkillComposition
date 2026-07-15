@@ -122,7 +122,7 @@
 {\bfseries\fontsize{19}{23}\selectfont Restrictiveness and Skill Composition\par}
 \vspace{0.7cm}
 {\itshape\fontsize{13}{17}\selectfont
-How labor-migration policy relates to the skill composition of\\
+How does labor-migration policy relate to the skill composition of\\
 long-term employment-related immigration in European destinations?\par}
 
 \vfill
@@ -138,7 +138,7 @@ Amsterdam School of Economics, University of Amsterdam\\
 Supervisor: Naomi Leefmans\\
 Second reader: Dirk Veestraeten\\
 July 2026\\
-Word count: 14,990\par}
+Word count: 14,992\par}
 \end{titlepage}
 \setcounter{page}{2}
 \hypersetup{pageanchor=true}
@@ -192,8 +192,10 @@ lagged cumulative net restrictiveness is associated with a
 leaves the estimate positive and significant. PPML finds a positive
 high-skilled permit-count association (β = 0.045536, p = 0.002) but no
 significant total-count change. The work-visa-only estimate is larger (β
-= 0.008190, p \textless{} 0.001). These are conditional associations,
-not causal effects of a dedicated high-skill route.
+= 0.008190, p \textless{} 0.001). The association is not statistically
+significant when the United Kingdom is added to the sample or when
+destination-specific linear trends are included. These are conditional
+associations, not causal effects of a dedicated high-skill route.
 
 \clearpage
 \tableofcontents
@@ -335,11 +337,12 @@ legacies. This explains the layered European system in which EU
 frameworks coexist with national talent schemes, researcher permits,
 shortage-list channels, salary rules, and employer-sponsored permits.
 
-The measurement literature points in the same direction. Rayp, Ruyssen
-and Standaert (2017), Helbling et al. (2017), and de Haas, Natter and
-Vezzoli's (2015) work on migration-policy change show that immigration
-policy is multidimensional. Visible entry rules and less visible rules
-on stay, rights, and integration do not necessarily move together.
+The measurement literature points in the same direction. Work on
+migration-policy change by Rayp, Ruyssen and Standaert (2017), Helbling
+et al. (2017), and de Haas, Natter and Vezzoli (2015) shows that
+immigration policy is multidimensional. Visible entry rules and less
+visible rules on stay, rights, and integration do not necessarily move
+together.
 
 \subsection{2.4 Positioning relative to previous
 methods}\label{positioning-relative-to-previous-methods}
@@ -356,9 +359,7 @@ bilateral gravity model with separate high-skilled policy instruments.
 Measurement-focused work, including Rayp, Ruyssen and Standaert (2017)
 and Helbling et al. (2017), instead builds synthetic country-level
 policy indices. This thesis combines an aggregate benchmark with a
-bilateral model; origin-year fixed effects absorb shocks common to each
-origin-year and therefore reduce, but do not eliminate,
-multilateral-resistance concerns.
+bilateral origin-year fixed-effects model.
 
 \subsection{2.5 Measurement of migration
 policy}\label{measurement-of-migration-policy}
@@ -396,9 +397,7 @@ all-migrant-worker reforms from reforms targeting skilled/high-skilled
 or low-skilled workers. Fourth, it estimates a bilateral
 origin-destination-year model with destination and origin-year fixed
 effects and denominator weights. Fifth, it uses wild-cluster bootstrap
-inference to address the limited number of destination clusters. These
-choices sharpen the analysis, but the estimates remain conditional
-associations rather than causal effects.
+inference to address the limited number of destination clusters.
 
 \clearpage
 \section{3. Theoretical Framework}\label{theoretical-framework}
@@ -616,15 +615,15 @@ PermitScale, destination unemployment, and destination GDP growth,
 together with destination and origin-year fixed effects. The coefficient
 on Restrict remains the coefficient of interest. The skill-targeted
 controls account for reforms that can directly affect the numerator or
-the lower-skilled part of the denominator. PermitScale captures the
-corridor\textquotesingle s size in the previous year; the weight is the
-current denominator used to calculate HSRate. Destination fixed effects
-absorb stable country differences, while origin-year fixed effects
-absorb shocks shared by migrants from the same origin in the same year,
-including origin labor-market conditions and common changes in the
-attractiveness of alternative destinations. They therefore reduce,
-rather than eliminate, multilateral-resistance concerns. This design
-separates general restrictiveness from skill-targeted reforms and
+the lower-skilled part of the denominator. PermitScale captures the size
+of the corridor (the origin-destination pair) in the previous year; the
+weight is the current denominator used to calculate HSRate. Destination
+fixed effects absorb stable country differences, while origin-year fixed
+effects absorb shocks shared by migrants from the same origin in the
+same year, including origin labor-market conditions and common changes
+in the attractiveness of alternative destinations. They therefore
+reduce, rather than eliminate, multilateral-resistance concerns. This
+design separates general restrictiveness from skill-targeted reforms and
 reduces noise from small permit cells.
 
 \[\begin{array}{r}
@@ -783,18 +782,17 @@ The main outcome is built from the employment-related permit categories.
 The denominator is the broad employment-permit category, while the
 high-skilled numerator combines permits issued to highly skilled workers
 and researchers. EU Blue Card permits are not included in the main
-high-skilled numerator, for two reasons. First, the Blue Card is an
-EU-level channel with common legal foundations but uneven national
-implementation and participation, so it is not governed by the national
-policy changes that identify the models in the same way as national
-permit routes are. Second, the scheme only begins issuing permits in
-2011-2012 and does not operate in all sample destinations, including the
-United Kingdom, Denmark, Ireland, and the non-EU European Economic Area
-(EEA) countries, so adding it would build a mechanical post-2012 break
-into the outcome series. Blue Card counts are instead examined
-separately in the permit-category diagnostic in Section 7.3, and the
-timing of the Blue Card and related directives is controlled for
-directly in the EU directive-window check.
+high-skilled numerator, mainly for reasons of timing and coverage: the
+scheme only begins issuing permits in 2011-2012 and does not operate in
+all sample destinations, including the United Kingdom, Denmark, Ireland,
+and the non-EU European Economic Area (EEA) countries, so adding it
+would build a mechanical post-2012 break into the outcome series.
+Researcher permits also rest on an EU directive, but that category is
+reported throughout the sample window, so it does not create a
+comparable break. Blue Card counts are instead examined separately in
+the permit-category diagnostic in Section 7.3, and the timing of the
+Blue Card and related directives is controlled for directly in the EU
+directive-window check.
 
 Eurostat\textquotesingle s classification is administrative rather than
 a harmonized classification based on occupation or educational
@@ -871,9 +869,9 @@ the outcome is based on first residence permits issued for
 employment-related entry and stay rather than asylum, border control,
 exit, or integration policy. Because the policy measure is lagged by one
 year, the 2020 robustness outcome is matched to the cumulative policy
-score through 2019. Second, only events targeting the relevant migrant group and
-coded for All foreign nationalities enter each measure. The analysis
-distinguishes three policy definitions: the
+score through 2019. Second, only events targeting the relevant migrant
+group and coded for All foreign nationalities enter each measure. The
+analysis distinguishes three policy definitions: the
 skilled/high-skilled-targeted measure, the low-skilled-targeted measure,
 and the all-migrant-worker-only measure. The all-migrant-worker-only
 definition remains the coefficient of interest in the preferred model,
@@ -1102,7 +1100,11 @@ Unemployment by sex and age dataset (Eurostat 2026e) and lagged real GDP
 growth from Eurostat\textquotesingle s Gross domestic product (GDP) and
 main components dataset (Eurostat 2026c). GDP growth is complete in the
 current panel, while unemployment has 37 missing country-year values and
-therefore reduces the full-control aggregate sample.
+therefore reduces the full-control aggregate sample. In particular, the
+Eurostat unemployment series has no United Kingdom observations over the
+estimation window, so the United Kingdom is absent from all baseline
+regression samples; it appears only in the descriptive graphs and in the
+ILOSTAT-based checks in Section 8.
 
 The fully controlled aggregate and bilateral regressions begin in 2009
 because Eurostat\textquotesingle s first-permit series begins in 2008
@@ -1116,9 +1118,11 @@ PermitScale control. A destination-year or origin-destination-year cell
 with fewer than 30 current employment permits is therefore excluded from
 the baseline share sample. This transparent minimum-cell rule limits
 ratios driven by only a handful of permits; denominator weighting then
-gives larger retained cells more influence. Because both choices use the
-observed denominator, Section 8 also reports a weighted sensitivity
-check that retains every positive-denominator corridor.
+gives larger retained cells more influence. In the bilateral panel, this
+rule retains 5,608 of the 21,187 positive-denominator cells that would
+otherwise enter the estimation. Because both choices use the observed
+denominator, Section 8 also reports a weighted sensitivity check that
+retains every positive-denominator corridor.
 
 The analysis draws on 281,952 filtered Eurostat rows and more than 7,600
 DEMIG-QuantMig records. This breadth supports coverage but does not
@@ -1303,15 +1307,15 @@ descriptive. N denotes observations and G destination clusters.
 \centering
 \includegraphics[width=0.91\textwidth,height=0.73\textheight,keepaspectratio]{figures/graph1-v23.png}
 \caption[Descriptive relationship between cumulative net policy-change score and HSRate within 2008--2019.]{Descriptive relationship between cumulative net policy-change score and HSRate within 2008--2019.}\label{fig:descriptive}
-\GraphNote{Graph 1A shows each destination's first-to-last endpoint change within the window; seven series lack one or both exact boundary years. The affected destinations are Belgium, Croatia, Iceland, Luxembourg, the Netherlands, Switzerland, and the United Kingdom. Graph 1B reports cumulative policy paths for the nine largest destinations by total Non-EU employment permits, with the United Kingdom marked separately because of Brexit. France and the United Kingdom both equal 0 from 2008 through 2013; contrasting line types and markers make their exact overlap visible. Graph 1A covers 31 descriptive series; the controlled regressions retain 30 destination clusters after the complete-case filter.}
+\GraphNote{Graph 1A shows each destination's first-to-last endpoint change within the window; seven series lack one or both exact boundary years. The affected destinations are Belgium, Croatia, Iceland, Luxembourg, the Netherlands, Switzerland, and the United Kingdom. Graph 1B reports cumulative policy paths for the nine largest destinations by total Non-EU employment permits, with the United Kingdom marked separately because of Brexit. Graph 1A covers 31 descriptive series; the controlled regressions retain 30 destination clusters after the complete-case filter.}
 \end{figure}
 
 Graph 1 is descriptive: its endpoint slope is insignificant, with HSRate
 rising in 22 destinations, unchanged in three, and falling in six.
 Twenty of 31 policy paths move toward net liberalization, and about 62\%
-of retained events are less restrictive. Because denominators and
-endpoint windows differ, the fixed-effects models provide the formal
-test.
+of retained all-migrant-worker events are less restrictive. Because
+denominators and endpoint windows differ, the fixed-effects models
+provide the formal test.
 
 \clearpage
 \section{7. Results}\label{results}
@@ -1486,10 +1490,13 @@ significant after the few-cluster correction. A one-unit increase in
 lagged cumulative net policy change for all-migrant-worker reforms is
 associated with a 0.65-percentage-point increase in HSRate, conditional
 on the full set of fixed effects and controls listed in the Table 7
-notes. The high-skilled policy control is imprecisely estimated (β =
-0.001423, p = 0.446). The low-skilled policy control is negative and
-marginal at ten percent (β = -0.008571, p = 0.085), so it is not treated
-as main evidence.
+notes. Because about 62 percent of retained all-migrant-worker events
+are liberalizing and the mean cumulative score is negative, this
+association is identified largely from differences in liberalization,
+not only from outright tightening episodes. The high-skilled policy
+control is imprecisely estimated (β = 0.001423, p = 0.446). The
+low-skilled policy control is negative and marginal at ten percent (β =
+-0.008571, p = 0.085), so it is not treated as main evidence.
 
 Scaling the estimate by event magnitude makes its size easier to
 interpret. A Mid-level restrictive reform contributes three cumulative
@@ -1592,21 +1599,21 @@ to a particular reform or the unobserved lower-skilled count directly.
 
 The positive HSNumber estimate in Table 8 should not be interpreted as
 evidence that general restrictions attract additional skilled migrants.
-HSNumber counts first permits recorded under the administrative
-highly-skilled-worker and researcher categories rather than
-entrants\textquotesingle{} underlying skills. One possible explanation
-is that, when the general work-permit channel tightens, some recruitment
-shifts toward dedicated high-skilled permit categories, which would
-raise the measured HSNumber without any increase in total skilled
-arrivals. Because the data do not follow individuals across routes, this
-possibility cannot be tested directly. Table 9 examines whether the
-positive HSNumber association is concentrated in one recorded permit
-category or appears across several categories. It re-estimates Equation
-(4) four times, changing the dependent variable in turn to highly
-skilled worker permits, researcher permits, EU Blue Card permits, and
-the residual employment-permit count (EMP − HSNumber), while retaining
-the policy regressor, controls, and fixed-effects structure. These are
-four separate PPML regressions, not four coefficients from one model.
+As Section 6.1 explains, HSNumber records administrative admission
+routes, not entrants\textquotesingle{} underlying skills. One possible
+explanation is that, when the general work-permit channel tightens, some
+recruitment shifts toward dedicated high-skilled permit categories,
+which would raise the measured HSNumber without any increase in total
+skilled arrivals. Because the data do not follow individuals across
+routes, this possibility cannot be tested directly. Table 9 examines
+whether the positive HSNumber association is concentrated in one
+recorded permit category or appears across several categories. It
+re-estimates Equation (4) four times, changing the dependent variable in
+turn to highly skilled worker permits, researcher permits, EU Blue Card
+permits, and the residual employment-permit count (EMP − HSNumber),
+while retaining the policy regressor, controls, and fixed-effects
+structure. These are four separate PPML regressions, not four
+coefficients from one model.
 
 \par\Needspace{8\baselineskip}
 \noindent\begin{minipage}{\linewidth}
@@ -1733,8 +1740,8 @@ work-visa and work-permit events & 0.008190*** & \textless{} 0.001 &
 Significant; larger estimate \\
 R8. Bilateral: origin-income strata & Re-estimates the preferred model
 by World Bank FY2020 origin-income group & See text & See text &
-Positive and significant for H/UM/LM; low-income estimate is negative
-and marginal \\
+Positive and significant for high/upper-middle/lower-middle-income
+origins; low-income estimate is negative and marginal \\
 R9. Bilateral: EU directive windows & Adds four destination-year
 directive-window controls where legally applicable & 0.006587*** &
 \textless{} 0.001 & Preferred coefficient remains stable \\
@@ -1849,17 +1856,17 @@ is verifying evidence; the all-tools measure remains preferred because
 it matches the Section 6.2 policy-area definition.
 
 R8 divides migrant-origin countries into income groups using the World
-Bank's FY2020 country income classification (World Bank Data Team 2019),
-such as high-income, upper-middle-income, lower-middle-income, and
-low-income origins. It then re-runs the preferred model separately for
-each group to see whether the relationship between policy
-restrictiveness and the high-skilled share is stronger, weaker, or
-absent for migrants from different income levels. The association
-remains significant for high-income (β = 0.016784, p = 0.003),
-upper-middle-income (β = 0.004139, p = 0.014), and lower-middle-income
-origins (β = 0.006739, p = 0.001). The low-income estimate is negative
-but marginal (β = -0.002422, p = 0.083, N = 347, G = 19) and is not
-treated as an established reversal.
+Bank's FY2020 country income classification (World Bank Data Team 2019):
+high-income, upper-middle-income, lower-middle-income, and low-income
+origins. It then re-runs the preferred model separately for each group
+to see whether the relationship between policy restrictiveness and the
+high-skilled share is stronger, weaker, or absent for migrants from
+different income levels. The association remains significant for
+high-income (β = 0.016784, p = 0.003), upper-middle-income (β =
+0.004139, p = 0.014), and lower-middle-income origins (β = 0.006739, p =
+0.001). The low-income estimate is negative but marginal (β = -0.002422,
+p = 0.083, N = 347, G = 19) and is not treated as an established
+reversal.
 
 R9 checks whether the preferred result is driven by common EU directive
 periods. It adds timing indicators for the Blue Card, Single Permit,
@@ -1874,9 +1881,7 @@ separately gives β = 0.006587 (SE = 0.001581, p \textless{} 0.001). Both
 are close to the preferred 0.006516, and no directive indicator is
 individually significant at five percent. The main result remains after
 controlling for broad EU directive periods, so it does not appear to be
-driven by those directive windows. However, these controls are only
-rough timing indicators and should not be interpreted as causal
-estimates of the effects of specific reforms. Graph 2 reports the four
+driven by those directive windows. Graph 2 reports the four
 directive-dummy coefficients.
 
 \begin{figure}[H]
@@ -1993,8 +1998,7 @@ which is consistent with the main positive Restrict coefficient when
 read from the easing side. Liberalizing events account for about 62
 percent of retained policy events. This imbalance may contribute to the
 greater precision of the liberalizing estimate. The diagnostic
-identifies the side of the net score carrying the clearer association;
-it does not establish a causal mechanism.}
+identifies the side of the net score carrying the clearer association.}
 
 \textbf{Policy-lead timing diagnostic.} Unlike the preceding EU-citizen
 placebo, this test keeps the preferred Non-EU bilateral sample, outcome,
@@ -2035,8 +2039,7 @@ values provide no indication of problematic linear redundancy among the
 substantive regressors. Substantively, the all-migrant-worker score is
 therefore not a near-linear duplicate of the high- and low-skilled
 policy controls after the fixed effects are removed. This diagnostic
-concerns coefficient precision and numerical redundancy; it does not
-resolve policy endogeneity or establish causality.
+concerns coefficient precision and numerical redundancy.
 
 \textbf{\hfill\break
 }
@@ -2055,7 +2058,7 @@ bilateral specifications. The aggregate estimates and the UK-inclusive
 ILOSTAT check are not significant. R1, R2, R3, R4, R6, R7, the
 high-income-origin point from R8, R9, and R10 remain statistically
 significant; R5 and the destination-specific-trend check in R12 are not
-significant
+significant.
 
 \begin{figure}[H]
 \centering
@@ -2104,32 +2107,31 @@ models, the UK-inclusive model, and the destination-trend model are not
 significant, while the unweighted bilateral result weakens under
 wild-cluster bootstrap inference. The finding is therefore conditional
 on the preferred bilateral, denominator-weighted design. Because the
-models differ in estimand and sometimes sample, their contrast cannot be
-attributed solely to origin-year fixed effects or weighting. The slowly
-changing cumulative score is also difficult to separate from smooth
-destination trajectories once linear trends are included.
+models differ in what they estimate and sometimes in sample, their
+contrast cannot be attributed solely to origin-year fixed effects or
+weighting. The slowly changing cumulative score is also difficult to
+separate from smooth destination trajectories once linear trends are
+included.
 
 PPML finds a positive association with measured HSNumber but no
 statistically detectable association with the total employment-permit
 count. Outcome-specific removal of all-zero fixed-effect groups leaves
 different effective samples, so the count coefficients complement rather
-than decompose HSRate. HSNumber records the highly-skilled-worker and
-researcher permit categories, not entrants\textquotesingle{} underlying
-skills. The results therefore do not establish that low-skilled permits
-fell, that workers changed permit routes, or that tighter policy
+than decompose HSRate. The results do not establish that low-skilled
+permits fell, that workers changed permit routes, or that tighter policy
 increased the total supply of skilled labor. The design also does not
 estimate welfare effects, government decision processes, or
 individual-level responses.
 
-Weighting and sample selection define the estimand. Denominator
-weighting gives larger corridors more influence and estimates
-composition across the permits issued rather than an equal-corridor
-association. The stable prior-year-weight estimate reduces concern about
-using a potentially policy-responsive current denominator but does not
-make the weight exogenous. The significant weighted no-cutoff result
-indicates that the 30-permit minimum does not create the finding; the
-weaker unweighted no-cutoff result confirms that weighting still
-matters.
+Weighting and sample selection define what the coefficient measures.
+Denominator weighting gives larger corridors more influence and
+estimates composition across the permits issued rather than an
+equal-corridor association. The stable prior-year-weight estimate
+reduces concern about using a potentially policy-responsive current
+denominator but does not make the weight exogenous. The significant
+weighted no-cutoff result indicates that the 30-permit minimum does not
+create the finding; the weaker unweighted no-cutoff result confirms that
+weighting still matters.
 
 Data construction also limits measured legal exposure. The fixed
 EU27-2020 list keeps Non-EU membership consistent but assigns UK and
@@ -2160,7 +2162,7 @@ coefficients could appear significant by chance. Selecting the preferred
 model before examining the results limits specification searching.
 Separately, the wild-cluster bootstrap addresses inference with 30
 destination clusters. Neither step adjusts all robustness results for
-multiple testing or makes the estimate causal.
+multiple testing.
 
 \clearpage
 \section{10. Policy Implications}\label{policy-implications}
@@ -2171,20 +2173,20 @@ composition of permits issued in the following year. General
 all-migrant-worker reforms are associated with a higher high-skilled
 permit share. Supporting count models show a positive association with
 the measured high-skilled permit count but no statistically detectable
-association with the total employment-permit count. Because these models
-have different effective samples, they should not be interpreted as a
-formal decomposition of the share result.
+association with the total employment-permit count.
 
 Because larger permit corridors receive greater weight, the estimate is
 most informative about composition across the permits actually issued
 rather than about the average migration corridor. Policymakers should
 not interpret the positive share estimate as evidence that tighter
 general rules automatically attract skilled migrants or reduce
-low-skilled immigration. HSRate measures administrative first-permit
-categories, and the residual category includes all employment permits
-outside the main high-skilled categories, not only low-skilled permits.
-Nor does a higher share establish an economic benefit, because the
-thesis does not estimate effects on vacancies, productivity, labor
+low-skilled immigration. The residual category includes all employment
+permits outside the main high-skilled categories, not only low-skilled
+permits. The policy-direction diagnostic in Section 8.3 reinforces this
+caution: the association is clearest on the liberalizing side, so the
+results do not show that new tightening would raise the high-skilled
+share. Nor does a higher share establish an economic benefit, because
+the thesis does not estimate effects on vacancies, productivity, labor
 shortages, fiscal outcomes, integration, or migrant welfare. Since the
 estimates are associational, model-dependent, and based on a cumulative
 measure combining heterogeneous reforms, they should not be used to
@@ -2219,9 +2221,10 @@ high- and low-skilled workers separately, finds that one additional unit
 of cumulative net restrictive change is associated with approximately a
 0.65-percentage-point increase in the high-skilled share of
 employment-related first permits. The result remains positive across
-several alternative specifications, although its sensitivity to
-destination-specific trends shows that it should be understood as a
-conditional association rather than a causal effect.
+several alternative specifications, although it is not statistically
+significant when the United Kingdom is included in the sample or when
+destination-specific linear trends are added, so it should be understood
+as a conditional association rather than a causal effect.
 
 The sign of the preferred estimate is consistent with the compositional
 prediction developed in Section 3. High-skilled candidates may retain
